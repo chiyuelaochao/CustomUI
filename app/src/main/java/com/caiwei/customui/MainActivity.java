@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findViewById(R.id.flow_layout_button).setOnClickListener(this);
-
+        findViewById(R.id.waterfall_layout_button).setOnClickListener(this);
     }
 
     @Override
@@ -24,6 +24,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.flow_layout_button:
                 goToPage(FlowLayoutActivity.class);
+                break;
+            case R.id.waterfall_layout_button:
+                goToPage(WaterfallLayoutActivity.class);
                 break;
         }
     }

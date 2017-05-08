@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.caiwei.customui">
+<manifest package="com.caiwei.customui"
+          xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,6 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-
             android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -20,8 +19,10 @@
         </activity>
         <activity
             android:name=".FlowLayoutActivity"
-            android:launchMode="singleTask">
-        </activity>
+            android:launchMode="singleTask"/>
+        <activity
+            android:name=".WaterfallLayoutActivity"
+            android:launchMode="singleTask"/>
     </application>
 
 </manifest>
