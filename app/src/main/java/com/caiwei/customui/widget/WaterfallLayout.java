@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import com.caiwei.customui.R;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -30,7 +29,7 @@ public class WaterfallLayout extends ViewGroup {
         super(context, attrs);
         TypedArray s = context.obtainStyledAttributes(attrs, R.styleable.waterfallLayout);//从xml那传来的一组值
         columnNum = s.getInteger(R.styleable.waterfallLayout_column_num, DEFAULT_COLUMN_NUM);
-        Log.e(TAG, "columnNum = " + columnNum);
+        Log.i(TAG, "WaterfallLayout() columnNum = " + columnNum);
     }
 
     @Override
@@ -64,9 +63,6 @@ public class WaterfallLayout extends ViewGroup {
                 columnWidthList.add(0);// 2.每列宽度集合
                 columnHeightList.add(0);// 3.每列高度集合
             }
-//            Log.e(TAG, "mViewColumnList = " + mViewColumnList.size());
-//            Log.e(TAG, "columnWidthList = " + columnWidthList.size());
-//            Log.e(TAG, "columnHeightList = " + columnHeightList.size());
 
             for (int i = 0; i < getChildCount(); i++) {
                 View childView = getChildAt(i);
@@ -78,8 +74,6 @@ public class WaterfallLayout extends ViewGroup {
 
                 // 根据每列的高度，把childView加入到高度最小的那列
                 int index = getMinColumnHeightIndex(columnHeightList);
-//                Log.e(TAG, "index = " + index);
-                Collections.min(columnHeightList);
                 columnHeightList.get(index);
                 mViewColumnList.get(index).add(childView);
                 if (iChildWidth > columnWidthList.get(index)) {
@@ -152,8 +146,10 @@ public class WaterfallLayout extends ViewGroup {
             curLeft += columnWidthList.get(i);
             curTop = 0;
         }
+
         mViewColumnList.clear();
         columnWidthList.clear();
+        columnHeightList.clear();
     }
 
     public interface OnItemClickListener {
