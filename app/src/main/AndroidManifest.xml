@@ -23,7 +23,7 @@
         <activity
             android:name=".layout.WaterfallLayoutActivity"
             android:launchMode="singleTask"/>
-        <activity android:name=".xfermode.XfermodeActivity">
+        <activity android:name=".xfermode.XferModeActivity">
         </activity>
         <activity android:name=".xfermode.RoundImageActivity">
         </activity>
@@ -38,6 +38,10 @@
         <activity android:name=".xfermode.InvertedImageActivity">
         </activity>
         <activity android:name=".xfermode.SRCActivity">
+        </activity>
+        <activity android:name=".xfermode.LightBook_LightenActivity">
+        </activity>
+        <activity android:name=".xfermode.TwitterView_MultiplyActivity">
         </activity>
     </application>
 

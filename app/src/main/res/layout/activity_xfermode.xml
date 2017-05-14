@@ -48,4 +48,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="SRC"/>
+
+    <Button
+        android:id="@+id/light_book_lighten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Light Book LIGHTEN"/>
+
+    <Button
+        android:id="@+id/twitter_view_multiply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Twitter View MULTIPLY"/>
 </LinearLayout>

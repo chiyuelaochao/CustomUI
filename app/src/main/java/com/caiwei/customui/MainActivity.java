@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.caiwei.customui.layout.FlowLayoutActivity;
 import com.caiwei.customui.layout.WaterfallLayoutActivity;
-import com.caiwei.customui.xfermode.XfermodeActivity;
+import com.caiwei.customui.xfermode.XferModeActivity;
 
 /**
  * Created by Cai Wei on 5/6/2017.
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 goToPage(WaterfallLayoutActivity.class);
                 break;
             case R.id.xfer_mode_button:
-                goToPage(XfermodeActivity.class);
+                goToPage(XferModeActivity.class);
                 break;
         }
     }

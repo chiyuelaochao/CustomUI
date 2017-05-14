@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.caiwei.customui.R;
 
-public class XfermodeActivity extends AppCompatActivity implements View.OnClickListener {
+public class XferModeActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +20,8 @@ public class XfermodeActivity extends AppCompatActivity implements View.OnClickL
         findViewById(R.id.inverted_image_destin).setOnClickListener(this);
         findViewById(R.id.irregular_wave_destin).setOnClickListener(this);
         findViewById(R.id.src_mode).setOnClickListener(this);
+        findViewById(R.id.light_book_lighten).setOnClickListener(this);
+        findViewById(R.id.twitter_view_multiply).setOnClickListener(this);
     }
 
     @Override
@@ -46,10 +48,16 @@ public class XfermodeActivity extends AppCompatActivity implements View.OnClickL
             case R.id.src_mode:
                 goToPage(SRCActivity.class);
                 break;
+            case R.id.light_book_lighten:
+                goToPage(LightBook_LightenActivity.class);
+                break;
+            case R.id.twitter_view_multiply:
+                goToPage(TwitterView_MultiplyActivity.class);
+                break;
         }
     }
 
     private void goToPage(Class page) {
-        startActivity(new Intent(XfermodeActivity.this, page));
+        startActivity(new Intent(XferModeActivity.this, page));
     }
 }
