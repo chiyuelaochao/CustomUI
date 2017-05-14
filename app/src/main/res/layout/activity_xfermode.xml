@@ -13,10 +13,10 @@
         android:text="Round Image"/>
 
     <Button
-        android:id="@+id/x2"
+        android:id="@+id/heart_map"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="x2"/>
+        android:text="HeartMapView"/>
 
     <Button
         android:id="@+id/x3"

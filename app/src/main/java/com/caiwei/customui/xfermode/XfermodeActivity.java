@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.caiwei.customui.R;
-import com.caiwei.customui.RoundImageActivity;
 import com.caiwei.customui.WaterfallLayoutActivity;
 
 public class XfermodeActivity extends AppCompatActivity implements View.OnClickListener {
@@ -16,7 +15,7 @@ public class XfermodeActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_xfermode);
         findViewById(R.id.round_image).setOnClickListener(this);
-        findViewById(R.id.x2).setOnClickListener(this);
+        findViewById(R.id.heart_map).setOnClickListener(this);
         findViewById(R.id.x3).setOnClickListener(this);
     }
 
@@ -26,8 +25,8 @@ public class XfermodeActivity extends AppCompatActivity implements View.OnClickL
             case R.id.round_image:
                 goToPage(RoundImageActivity.class);
                 break;
-            case R.id.x2:
-                goToPage(WaterfallLayoutActivity.class);
+            case R.id.heart_map:
+                goToPage(HeartMapActivity.class);
                 break;
             case R.id.x3:
                 goToPage(WaterfallLayoutActivity.class);

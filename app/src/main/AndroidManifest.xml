@@ -25,7 +25,9 @@
             android:launchMode="singleTask"/>
         <activity android:name=".xfermode.XfermodeActivity">
         </activity>
-        <activity android:name=".RoundImageActivity">
+        <activity android:name=".xfermode.RoundImageActivity">
+        </activity>
+        <activity android:name=".xfermode.HeartMapActivity">
         </activity>
     </application>
 

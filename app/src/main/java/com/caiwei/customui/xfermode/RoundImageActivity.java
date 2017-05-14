@@ -1,7 +1,9 @@
-package com.caiwei.customui;
+package com.caiwei.customui.xfermode;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.caiwei.customui.R;
 
 public class RoundImageActivity extends AppCompatActivity {
 
