@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.caiwei.customui.xfermode.XfermodeActivity;
+
 /**
  * Created by Cai Wei on 5/6/2017.
  */
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         findViewById(R.id.flow_layout_button).setOnClickListener(this);
         findViewById(R.id.waterfall_layout_button).setOnClickListener(this);
+        findViewById(R.id.xfer_mode_button).setOnClickListener(this);
     }
 
     @Override
@@ -27,6 +30,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.waterfall_layout_button:
                 goToPage(WaterfallLayoutActivity.class);
+                break;
+            case R.id.xfer_mode_button:
+                goToPage(XfermodeActivity.class);
                 break;
         }
     }

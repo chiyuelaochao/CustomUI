@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.caiwei.customui"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.caiwei.customui">
 
     <application
         android:allowBackup="true"
@@ -23,6 +23,10 @@
         <activity
             android:name=".WaterfallLayoutActivity"
             android:launchMode="singleTask"/>
+        <activity android:name=".xfermode.XfermodeActivity">
+        </activity>
+        <activity android:name=".RoundImageActivity">
+        </activity>
     </application>
 
 </manifest>

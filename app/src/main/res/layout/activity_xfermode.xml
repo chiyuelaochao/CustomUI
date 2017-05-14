@@ -7,20 +7,20 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/flow_layout_button"
+        android:id="@+id/round_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="FlowLayout"/>
+        android:text="Round Image"/>
 
     <Button
-        android:id="@+id/waterfall_layout_button"
+        android:id="@+id/x2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="WaterfallLayout"/>
+        android:text="x2"/>
 
     <Button
-        android:id="@+id/xfer_mode_button"
+        android:id="@+id/x3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="XferMode"/>
+        android:text="x3"/>
 </LinearLayout>
