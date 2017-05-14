@@ -19,6 +19,7 @@ public class XfermodeActivity extends AppCompatActivity implements View.OnClickL
         findViewById(R.id.radar_view).setOnClickListener(this);
         findViewById(R.id.inverted_image_destin).setOnClickListener(this);
         findViewById(R.id.irregular_wave_destin).setOnClickListener(this);
+        findViewById(R.id.src_mode).setOnClickListener(this);
     }
 
     @Override
@@ -41,6 +42,9 @@ public class XfermodeActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.irregular_wave_destin:
                 goToPage(IrregularWaveActivity.class);
+                break;
+            case R.id.src_mode:
+                goToPage(SRCActivity.class);
                 break;
         }
     }
