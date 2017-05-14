@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.caiwei.customui.widget.FlowLayout
+    <com.caiwei.customui.layout.FlowLayout
         android:id="@+id/flow_layout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
@@ -77,7 +77,7 @@
             style="@style/text_flag_01"
             android:text="hel2"/>
 
-    </com.caiwei.customui.widget.FlowLayout>
+    </com.caiwei.customui.layout.FlowLayout>
 
 
 </LinearLayout>

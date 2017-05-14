@@ -1,4 +1,4 @@
-package com.caiwei.customui.widget;
+package com.caiwei.customui.layout;
 
 import android.content.Context;
 import android.content.res.TypedArray;

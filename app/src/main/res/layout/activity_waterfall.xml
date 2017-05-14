@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="5dp">
 
-    <com.caiwei.customui.widget.WaterfallLayout
+    <com.caiwei.customui.layout.WaterfallLayout
         android:id="@+id/water_layout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -83,9 +83,9 @@
             style="@style/text_flag_01"
             android:text="hel2"/>
 
-    </com.caiwei.customui.widget.WaterfallLayout>
+    </com.caiwei.customui.layout.WaterfallLayout>
 
-    <com.caiwei.customui.widget.WaterfallLayout
+    <com.caiwei.customui.layout.WaterfallLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -161,9 +161,9 @@
             style="@style/text_flag_01"
             android:text="hel2"/>
 
-    </com.caiwei.customui.widget.WaterfallLayout>
+    </com.caiwei.customui.layout.WaterfallLayout>
 
-    <com.caiwei.customui.widget.WaterfallLayout
+    <com.caiwei.customui.layout.WaterfallLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -238,7 +238,7 @@
             style="@style/text_flag_01"
             android:text="hel2"/>
 
-    </com.caiwei.customui.widget.WaterfallLayout>
+    </com.caiwei.customui.layout.WaterfallLayout>
 
 
 </LinearLayout>

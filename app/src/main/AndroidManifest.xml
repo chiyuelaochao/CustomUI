@@ -18,16 +18,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FlowLayoutActivity"
+            android:name=".layout.FlowLayoutActivity"
             android:launchMode="singleTask"/>
         <activity
-            android:name=".WaterfallLayoutActivity"
+            android:name=".layout.WaterfallLayoutActivity"
             android:launchMode="singleTask"/>
         <activity android:name=".xfermode.XfermodeActivity">
         </activity>
         <activity android:name=".xfermode.RoundImageActivity">
         </activity>
         <activity android:name=".xfermode.HeartMapActivity">
+        </activity>
+        <activity android:name=".xfermode.OfficialDemoActivity">
         </activity>
     </application>
 

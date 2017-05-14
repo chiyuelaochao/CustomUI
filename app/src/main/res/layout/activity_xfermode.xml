@@ -7,6 +7,12 @@
     android:orientation="vertical">
 
     <Button
+        android:id="@+id/official_demo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Official Demo"/>
+
+    <Button
         android:id="@+id/round_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,11 +22,5 @@
         android:id="@+id/heart_map"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HeartMapView"/>
-
-    <Button
-        android:id="@+id/x3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="x3"/>
+        android:text="Heart Map"/>
 </LinearLayout>
