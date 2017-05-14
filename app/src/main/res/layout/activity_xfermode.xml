@@ -29,6 +29,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Radar View"/>
+
+    <Button
+        android:id="@+id/inverted_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inverted Image"/>
+
     <Button
         android:id="@+id/irregular_wave"
         android:layout_width="wrap_content"

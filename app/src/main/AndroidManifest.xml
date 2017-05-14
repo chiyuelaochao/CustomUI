@@ -35,6 +35,8 @@
         </activity>
         <activity android:name=".xfermode.IrregularWaveActivity">
         </activity>
+        <activity android:name=".xfermode.InvertedImageActivity">
+        </activity>
     </application>
 
 </manifest>
