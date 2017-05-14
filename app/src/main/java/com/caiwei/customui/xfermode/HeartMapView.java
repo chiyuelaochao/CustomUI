@@ -20,7 +20,62 @@ import com.caiwei.customui.R;
  * Created by Cai Wei on 5/14/2017.
  */
 public class HeartMapView extends View {
-    private Paint mBitMapPaint;
+
+    private Paint mPaint;
+    private int mItemWaveLength = 0;
+    private int dx = 0;
+
+    private Bitmap BmpSRC, BmpDST;
+
+    public HeartMapView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+
+        mPaint = new Paint();
+        mPaint.setColor(Color.RED);
+
+        BmpDST = BitmapFactory.decodeResource(getResources(), R.drawable.heartmap, null);
+        BmpSRC = Bitmap.createBitmap(BmpDST.getWidth(), BmpDST.getHeight(), Bitmap.Config.ARGB_8888);
+
+        mItemWaveLength = BmpDST.getWidth();
+        startAnim();
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+
+        Canvas c = new Canvas(BmpSRC);
+        //清空bitmap
+        c.drawColor(Color.RED, PorterDuff.Mode.CLEAR);
+        //画上矩形
+        c.drawRect(BmpDST.getWidth() - dx, 0, BmpDST.getWidth(), BmpDST.getHeight(), mPaint);
+
+        //模式合成
+        int layerId = canvas.saveLayer(0, 0, getWidth(), getHeight(), null, Canvas.ALL_SAVE_FLAG);
+        canvas.drawBitmap(BmpDST, 0, 0, mPaint);
+        mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
+        canvas.drawBitmap(BmpSRC, 0, 0, mPaint);
+        mPaint.setXfermode(null);
+        canvas.restoreToCount(layerId);
+    }
+
+
+    public void startAnim() {
+        ValueAnimator animator = ValueAnimator.ofInt(0, mItemWaveLength);
+        animator.setDuration(6000);
+        animator.setRepeatCount(ValueAnimator.INFINITE);
+        animator.setInterpolator(new LinearInterpolator());
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                dx = (int) animation.getAnimatedValue();
+                postInvalidate();
+            }
+        });
+        animator.start();
+    }
+
+    /*private Paint mBitMapPaint;
     private Bitmap mBitMapSRC, mBitMapDST;
     private int dx;
 
@@ -78,5 +133,5 @@ public class HeartMapView extends View {
         mBitMapPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
         canvas.drawBitmap(mBitMapSRC, 0, 0, mBitMapPaint);
         mBitMapPaint.setXfermode(null);
-    }
+    }*/
 }

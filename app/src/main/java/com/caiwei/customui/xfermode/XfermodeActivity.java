@@ -17,6 +17,7 @@ public class XfermodeActivity extends AppCompatActivity implements View.OnClickL
         findViewById(R.id.heart_map).setOnClickListener(this);
         findViewById(R.id.official_demo).setOnClickListener(this);
         findViewById(R.id.radar_view).setOnClickListener(this);
+        findViewById(R.id.irregular_wave).setOnClickListener(this);
     }
 
     @Override
@@ -33,6 +34,9 @@ public class XfermodeActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.radar_view:
                 goToPage(RadarViewActivity.class);
+                break;
+            case R.id.irregular_wave:
+                goToPage(IrregularWaveActivity.class);
                 break;
         }
     }
