@@ -3,4 +3,13 @@
     <declare-styleable name="waterfallLayout">
         <attr name="column_num" format="integer"></attr>
     </declare-styleable>
+
+    <declare-styleable name="RadarView">
+        <attr name="startColor" format="color"/>
+        <attr name="endColor" format="color"/>
+        <attr name="backgroundColor" format="color"/>
+        <attr name="circleNum" format="integer"/>
+        <attr name="lineColor" format="color"/>
+    </declare-styleable>
+
 </resources>

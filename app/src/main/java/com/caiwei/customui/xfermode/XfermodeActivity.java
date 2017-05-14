@@ -16,19 +16,23 @@ public class XfermodeActivity extends AppCompatActivity implements View.OnClickL
         findViewById(R.id.round_image).setOnClickListener(this);
         findViewById(R.id.heart_map).setOnClickListener(this);
         findViewById(R.id.official_demo).setOnClickListener(this);
+        findViewById(R.id.radar_view).setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.official_demo:
+                goToPage(OfficialDemoActivity.class);
+                break;
             case R.id.round_image:
                 goToPage(RoundImageActivity.class);
                 break;
             case R.id.heart_map:
                 goToPage(HeartMapActivity.class);
                 break;
-            case R.id.official_demo:
-                goToPage(OfficialDemoActivity.class);
+            case R.id.radar_view:
+                goToPage(RadarViewActivity.class);
                 break;
         }
     }

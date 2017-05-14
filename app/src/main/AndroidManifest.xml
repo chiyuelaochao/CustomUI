@@ -31,6 +31,8 @@
         </activity>
         <activity android:name=".xfermode.OfficialDemoActivity">
         </activity>
+        <activity android:name=".xfermode.RadarViewActivity">
+        </activity>
     </application>
 
 </manifest>
