@@ -17,11 +17,11 @@ import com.caiwei.customui.R;
  * Created by Cai Wei on 5/14/2017.
  */
 
-public class InvertedImageView extends View {
+public class InvertedImageView_DESTIN extends View {
     private Paint mBitPaint;
     private Bitmap BmpDST, BmpSRC, BmpRevert;
 
-    public InvertedImageView(Context context, AttributeSet attrs) {
+    public InvertedImageView_DESTIN(Context context, AttributeSet attrs) {
         super(context, attrs);
         setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         mBitPaint = new Paint();

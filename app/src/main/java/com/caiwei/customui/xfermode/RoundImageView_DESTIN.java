@@ -17,15 +17,39 @@ import com.caiwei.customui.R;
  * Created by Cai Wei on 5/14/2017.
  */
 
-public class RoundImageView extends View {
-    private Paint mBitMapPaint;
+public class RoundImageView_DESTIN extends View {
+    private Paint mBitPaint;
+    private Bitmap BmpDST, BmpSRC;
+
+    public RoundImageView_DESTIN(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+        mBitPaint = new Paint();
+        BmpDST = BitmapFactory.decodeResource(getResources(), R.drawable.xyjy6, null);
+        BmpSRC = BitmapFactory.decodeResource(getResources(), R.drawable.shade, null);
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+
+        int layerId = canvas.saveLayer(0, 0, getWidth(), getHeight(), null, Canvas.ALL_SAVE_FLAG);
+
+        canvas.drawBitmap(BmpDST, 0, 0, mBitPaint);
+        mBitPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
+        canvas.drawBitmap(BmpSRC, 0, 0, mBitPaint);
+
+        mBitPaint.setXfermode(null);
+        canvas.restoreToCount(layerId);
+    }
+    /*private Paint mBitMapPaint;
     private Bitmap mBitMapSRC, mBitMapDST;
 
-    public RoundImageView(Context context) {
+    public RoundImageView_DESTIN(Context context) {
         this(context, null);
     }
 
-    public RoundImageView(Context context, @Nullable AttributeSet attrs) {
+    public RoundImageView_DESTIN(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         mBitMapPaint = new Paint();
@@ -42,5 +66,5 @@ public class RoundImageView extends View {
         canvas.drawBitmap(mBitMapSRC, 0, 0, mBitMapPaint);
 
         mBitMapPaint.setXfermode(null);
-    }
+    }*/
 }

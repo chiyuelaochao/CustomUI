@@ -19,14 +19,14 @@ import com.caiwei.customui.R;
  * Created by Cai Wei on 5/14/2017.
  */
 
-public class IrregularWaveView extends View {
+public class IrregularWaveView_DESTIN extends View {
     private Paint mPaint;
     private int mItemWaveLength = 0;
     private int dx = 0;
 
     private Bitmap BmpSRC, BmpDST;
 
-    public IrregularWaveView(Context context, AttributeSet attrs) {
+    public IrregularWaveView_DESTIN(Context context, AttributeSet attrs) {
         super(context, attrs);
         mPaint = new Paint();
 

@@ -13,12 +13,12 @@ public class XfermodeActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_xfermode);
-        findViewById(R.id.round_image).setOnClickListener(this);
-        findViewById(R.id.heart_map).setOnClickListener(this);
+        findViewById(R.id.round_image_destin).setOnClickListener(this);
+        findViewById(R.id.heart_map_destin).setOnClickListener(this);
         findViewById(R.id.official_demo).setOnClickListener(this);
         findViewById(R.id.radar_view).setOnClickListener(this);
-        findViewById(R.id.inverted_image).setOnClickListener(this);
-        findViewById(R.id.irregular_wave).setOnClickListener(this);
+        findViewById(R.id.inverted_image_destin).setOnClickListener(this);
+        findViewById(R.id.irregular_wave_destin).setOnClickListener(this);
     }
 
     @Override
@@ -27,19 +27,19 @@ public class XfermodeActivity extends AppCompatActivity implements View.OnClickL
             case R.id.official_demo:
                 goToPage(OfficialDemoActivity.class);
                 break;
-            case R.id.round_image:
+            case R.id.round_image_destin:
                 goToPage(RoundImageActivity.class);
                 break;
-            case R.id.heart_map:
+            case R.id.heart_map_destin:
                 goToPage(HeartMapActivity.class);
                 break;
             case R.id.radar_view:
                 goToPage(RadarViewActivity.class);
                 break;
-            case R.id.inverted_image:
+            case R.id.inverted_image_destin:
                 goToPage(InvertedImageActivity.class);
                 break;
-            case R.id.irregular_wave:
+            case R.id.irregular_wave_destin:
                 goToPage(IrregularWaveActivity.class);
                 break;
         }

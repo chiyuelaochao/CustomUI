@@ -19,7 +19,7 @@ import com.caiwei.customui.R;
 /**
  * Created by Cai Wei on 5/14/2017.
  */
-public class HeartMapView extends View {
+public class HeartMapView_DESTIN extends View {
 
     private Paint mPaint;
     private int mItemWaveLength = 0;
@@ -27,7 +27,7 @@ public class HeartMapView extends View {
 
     private Bitmap BmpSRC, BmpDST;
 
-    public HeartMapView(Context context, AttributeSet attrs) {
+    public HeartMapView_DESTIN(Context context, AttributeSet attrs) {
         super(context, attrs);
 
         mPaint = new Paint();
