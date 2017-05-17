@@ -40,7 +40,7 @@ public class MaskFilterActitivy extends AppCompatActivity implements SeekBar.OnS
         float light = bar1.getProgress() / 100;
         float specular = bar2.getProgress();
         float blur = bar3.getProgress();
-//        embossMaskFilterView.setparam(x, y, z, light, specular, blur);
+        embossMaskFilterView.setparam(x, y, z, light, specular, blur);
     }
 
     private CheckBox initCheckBox(int id) {
