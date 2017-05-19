@@ -5,49 +5,62 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
+    <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/draw"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="draw"/>
+            android:background="@color/colorPrimary"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:padding="3dp">
 
-        <Button
-            android:id="@+id/clip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="clip"/>
+            <Button
+                android:id="@+id/draw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="draw"/>
 
-        <Button
-            android:id="@+id/round"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="round"/>
+            <Button
+                android:id="@+id/clip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="clip"/>
 
-        <Button
-            android:id="@+id/save_restore_basic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="s/r/basic"/>
+            <Button
+                android:id="@+id/round"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="round"/>
 
-        <Button
-            android:id="@+id/save_restore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="save/restore"/>
+            <Button
+                android:id="@+id/save_restore_basic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="s/r/basic"/>
 
-        <Button
-            android:id="@+id/save_restore_layer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="s/r/layer"/>
-    </LinearLayout>
+            <Button
+                android:id="@+id/save_restore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="save/restore"/>
+
+            <Button
+                android:id="@+id/save_restore_layer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="s/r/layer"/>
+
+            <Button
+                android:id="@+id/draw_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DrawFilter"/>
+        </LinearLayout>
+
+    </HorizontalScrollView>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -84,6 +97,12 @@
 
         <com.caiwei.customui.canvas.SaveRestoreLayerView
             android:id="@+id/sava_restore_layer_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+
+        <com.caiwei.customui.canvas.DrawFilterView
+            android:id="@+id/draw_filter_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="gone"/>
