@@ -13,10 +13,28 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/draw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="draw"/>
+
+        <Button
+            android:id="@+id/clip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="clip"/>
+
+        <Button
+            android:id="@+id/round"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="round"/>
+
+        <Button
             android:id="@+id/save_restore_basic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="save/restore/basic"/>
+            android:text="s/r/basic"/>
 
         <Button
             android:id="@+id/save_restore"
@@ -28,17 +46,35 @@
             android:id="@+id/save_restore_layer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="save/restore/layer"/>
+            android:text="s/r/layer"/>
     </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <com.caiwei.customui.canvas.RegionClipImageView
+            android:id="@+id/region_clip_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+
+        <com.caiwei.customui.canvas.RoundImageView
+            android:id="@+id/round_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+
+        <com.caiwei.customui.canvas.CanvasDrawView
+            android:id="@+id/canvas_draw_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
         <com.caiwei.customui.canvas.SaveRestoreBasicView
             android:id="@+id/sava_restore_basic_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
 
         <com.caiwei.customui.canvas.SaveRestoreView
             android:id="@+id/sava_restore_view"
