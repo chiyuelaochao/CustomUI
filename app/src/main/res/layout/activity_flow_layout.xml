@@ -1,83 +1,355 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.caiwei.customui.layout.FlowLayout
-        android:id="@+id/flow_layout"
-        android:layout_width="fill_parent"
+    <HorizontalScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            style="@style/text_flag_01"
-            android:text="hello"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:padding="3dp">
 
-        <TextView
-            style="@style/text_flag_01"
-            android:text="hello,hi"/>
+            <Button
+                android:id="@+id/flow_layout_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="flow_layout"/>
 
-        <TextView
-            style="@style/text_flag_01"
-            android:text="你是我的"
-            android:textSize="18sp"
-            />
+            <Button
+                android:id="@+id/waterflow_layout_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="waterflow_layout_button"/>
+        </LinearLayout>
+    </HorizontalScrollView>
 
-        <TextView
-            style="@style/text_flag_01"
-            android:text="hello,man"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <TextView
-            style="@style/text_flag_01"
-            android:text="helloview"/>
+        <com.caiwei.customui.layout.FlowLayout
+            android:id="@+id/flow_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            style="@style/text_flag_01"
-            android:text="view"/>
+            <TextView
+                style="@style/text_flag_01"
+                android:text="hello"/>
 
-        <TextView
-            style="@style/text_flag_01"
-            android:text="我是你的"
-            android:textSize="20sp"/>
+            <TextView
+                style="@style/text_flag_01"
+                android:text="hello,hi"/>
 
-        <TextView
-            style="@style/text_flag_01"
-            android:text="he"/>
+            <TextView
+                style="@style/text_flag_01"
+                android:text="你是我的"
+                android:textSize="18sp"/>
 
-        <TextView
-            style="@style/text_flag_01"
-            android:text="hello"/>
+            <TextView
+                style="@style/text_flag_01"
+                android:text="hello,man"/>
 
-        <TextView
-            style="@style/text_flag_01"
-            android:text="textview"/>
+            <TextView
+                style="@style/text_flag_01"
+                android:text="helloview"/>
 
-        <TextView
-            style="@style/text_flag_01"
-            android:text="view"/>
+            <TextView
+                style="@style/text_flag_01"
+                android:text="view"/>
 
-        <TextView
-            style="@style/text_flag_01"
-            android:text="hello,view"/>
+            <TextView
+                style="@style/text_flag_01"
+                android:text="我是你的"
+                android:textSize="20sp"/>
 
-        <TextView
-            style="@style/text_flag_01"
-            android:text="hello,mt"/>
+            <TextView
+                style="@style/text_flag_01"
+                android:text="he"/>
 
-        <TextView
-            style="@style/text_flag_01"
-            android:text="hel"/>
+            <TextView
+                style="@style/text_flag_01"
+                android:text="hello"/>
 
-        <TextView
-            style="@style/text_flag_01"
-            android:text="hel"/>
+            <TextView
+                style="@style/text_flag_01"
+                android:text="textview"/>
 
-        <TextView
-            style="@style/text_flag_01"
-            android:text="hel2"/>
+            <TextView
+                style="@style/text_flag_01"
+                android:text="view"/>
 
-    </com.caiwei.customui.layout.FlowLayout>
+            <TextView
+                style="@style/text_flag_01"
+                android:text="hello,view"/>
+
+            <TextView
+                style="@style/text_flag_01"
+                android:text="hello,mt"/>
+
+            <TextView
+                style="@style/text_flag_01"
+                android:text="hel"/>
+
+            <TextView
+                style="@style/text_flag_01"
+                android:text="hel"/>
+
+            <TextView
+                style="@style/text_flag_01"
+                android:text="hel2"/>
+
+        </com.caiwei.customui.layout.FlowLayout>
+
+        <LinearLayout
+            android:id="@+id/waterflow_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <com.caiwei.customui.layout.WaterfallLayout
+                android:id="@+id/water_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent"
+                app:column_num="4">
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="hello"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="hello,hi"
+                    android:textSize="38sp"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="你的"
+                    android:textSize="38sp"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="hello,man"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="helloview"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="view"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="我是你的"
+                    android:textSize="20sp"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="he"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="hello"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="textview"
+                    android:textSize="38sp"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="view"
+                    android:textSize="38sp"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="hello,view"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="hello,mt"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="hel"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="hel"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="hel2"/>
+
+            </com.caiwei.customui.layout.WaterfallLayout>
+
+            <com.caiwei.customui.layout.WaterfallLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@color/colorPrimary"
+                app:column_num="3">
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="hello"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="hello,hi"
+                    android:textSize="38sp"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="你的"
+                    android:textSize="38sp"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="hello,man"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="helloview"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="view"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="我是你的"
+                    android:textSize="20sp"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="he"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="hello"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="textview"
+                    android:textSize="38sp"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="view"
+                    android:textSize="38sp"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="hello,view"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="hello,mt"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="hel"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="hel"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="hel2"/>
+
+            </com.caiwei.customui.layout.WaterfallLayout>
+
+            <com.caiwei.customui.layout.WaterfallLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@color/colorAccent">
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="hello"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="hello,hi"
+                    android:textSize="38sp"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="你的"
+                    android:textSize="38sp"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="hello,man"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="helloview"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="view"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="我是你的"
+                    android:textSize="20sp"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="he"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="hello"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="textview"
+                    android:textSize="38sp"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="view"
+                    android:textSize="38sp"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="hello,view"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="hello,mt"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="hel"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="hel"/>
+
+                <TextView
+                    style="@style/text_flag_01"
+                    android:text="hel2"/>
+
+            </com.caiwei.customui.layout.WaterfallLayout>
 
 
+        </LinearLayout>
+    </RelativeLayout>
 </LinearLayout>

@@ -1,10 +1,7 @@
-package com.caiwei.customui.canvas;
+package com.caiwei.customui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-
-import com.caiwei.customui.InitViews;
-import com.caiwei.customui.R;
 
 public class CanvasActivity extends AppCompatActivity {
 

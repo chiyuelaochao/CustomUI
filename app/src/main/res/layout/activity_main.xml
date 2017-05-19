@@ -13,12 +13,6 @@
         android:text="FlowLayout"/>
 
     <Button
-        android:id="@+id/waterfall_layout_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="WaterfallLayout"/>
-
-    <Button
         android:id="@+id/xfer_mode_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,6 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Mask Filter"/>
+
     <Button
         android:id="@+id/canvas_button"
         android:layout_width="wrap_content"
