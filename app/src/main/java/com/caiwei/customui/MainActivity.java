@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.caiwei.customui.canvas.CanvasActivity;
 import com.caiwei.customui.layout.FlowLayoutActivity;
 import com.caiwei.customui.layout.WaterfallLayoutActivity;
 import com.caiwei.customui.maskFilter.MaskFilterActitivy;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.waterfall_layout_button).setOnClickListener(this);
         findViewById(R.id.xfer_mode_button).setOnClickListener(this);
         findViewById(R.id.mask_filter_button).setOnClickListener(this);
+        findViewById(R.id.canvas_button).setOnClickListener(this);
     }
 
     @Override
@@ -40,6 +42,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.mask_filter_button:
                 goToPage(MaskFilterActitivy.class);
+                break;
+            case R.id.canvas_button:
+                goToPage(CanvasActivity.class);
                 break;
         }
     }
