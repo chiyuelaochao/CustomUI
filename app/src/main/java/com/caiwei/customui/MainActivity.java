@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.xfer_mode_button).setOnClickListener(this);
         findViewById(R.id.mask_filter_button).setOnClickListener(this);
         findViewById(R.id.canvas_button).setOnClickListener(this);
+        findViewById(R.id.reveal_button).setOnClickListener(this);
+        findViewById(R.id.search_button).setOnClickListener(this);
     }
 
     @Override
@@ -38,6 +40,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.canvas_button:
                 goToPage(CanvasActivity.class);
+                break;
+            case R.id.reveal_button:
+                goToPage(RevealActivity.class);
+                break;
+            case R.id.search_button:
+                goToPage(SearchViewActivity.class);
                 break;
         }
     }

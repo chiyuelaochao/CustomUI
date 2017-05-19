@@ -16,7 +16,7 @@ import android.view.View;
 import com.caiwei.customui.R;
 
 /**
- * Created by John on 2017/5/17.
+ * Created by Cai Wei on 2017/5/20.
  */
 
 public class RoundImageView extends View {

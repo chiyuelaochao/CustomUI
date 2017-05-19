@@ -17,5 +17,6 @@ public class CanvasActivity extends AppCompatActivity {
         initViews.initButtonAndLayout(this, R.id.round, R.id.round_image_view);
         initViews.initButtonAndLayout(this, R.id.clip, R.id.region_clip_image_view);
         initViews.initButtonAndLayout(this, R.id.draw_filter, R.id.draw_filter_view);
+        initViews.initButtonAndLayout(this, R.id.draw_view, R.id.draw_view_view);
     }
 }

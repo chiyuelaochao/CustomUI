@@ -58,6 +58,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="DrawFilter"/>
+
+            <Button
+                android:id="@+id/draw_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Draw View"/>
         </LinearLayout>
 
     </HorizontalScrollView>
@@ -103,6 +109,12 @@
 
         <com.caiwei.customui.canvas.DrawFilterView
             android:id="@+id/draw_filter_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+
+        <com.caiwei.customui.canvas.DrawView
+            android:id="@+id/draw_view_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="gone"/>

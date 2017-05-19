@@ -29,4 +29,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Canvas"/>
+
+    <Button
+        android:id="@+id/reveal_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reveal"/>
+
+    <Button
+        android:id="@+id/search_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search View"/>
 </LinearLayout>

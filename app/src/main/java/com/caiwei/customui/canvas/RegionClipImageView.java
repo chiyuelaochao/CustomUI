@@ -13,7 +13,7 @@ import android.view.View;
 import com.caiwei.customui.R;
 
 /**
- * Created by John on 2017/5/16.
+ * Created by Cai Wei on 2017/5/20.
  */
 
 public class RegionClipImageView extends View {
