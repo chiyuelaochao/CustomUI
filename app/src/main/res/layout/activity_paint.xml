@@ -1,10 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.caiwei.customui.PaintActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:padding="3dp">
+
+            <Button
+                android:id="@+id/paint_basic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="basic"/>
+
+            <Button
+                android:id="@+id/dash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dash"/>
+
+            <Button
+                android:id="@+id/dash_path"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dash path"/>
+
+            <Button
+                android:id="@+id/minion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="minion"/>
+
+            <Button
+                android:id="@+id/circle_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="circle progress"/>
+
+            <Button
+                android:id="@+id/linear_gradient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="linear gradient"/>
+
+            <Button
+                android:id="@+id/gradient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="gradient"/>
+
+            <Button
+                android:id="@+id/zoom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="zoom"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <com.caiwei.customui.paint.PaintBasicView
+        android:id="@+id/paint_basic_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <com.caiwei.customui.paint.DashView
+        android:id="@+id/dash_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <!--dashEffect 动画view
+            由于上面的MyView的高度是match_parent的,所以要看到这个控件的效果,需要把上面那个控件注起来
+        -->
+
+    <com.caiwei.customui.paint.DashPathView
+        android:id="@+id/pash_path_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <com.caiwei.customui.paint.MinionView
+        android:id="@+id/minion_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <com.caiwei.customui.paint.CircleProgressBar
+        android:id="@+id/circle_progress_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <com.caiwei.customui.paint.LinearGradientTextView
+        android:id="@+id/linear_gradient_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <com.caiwei.customui.paint.GradientView
+        android:id="@+id/gradient_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <com.caiwei.customui.paint.ZoomImageView
+        android:id="@+id/zoom_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+</LinearLayout>
