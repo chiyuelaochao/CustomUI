@@ -20,25 +20,9 @@
         <activity
             android:name=".FlowLayoutActivity"
             android:launchMode="singleTask"/>
-        <activity android:name=".xfermode.XferModeActivity">
-        </activity>
-        <activity android:name=".xfermode.RoundImageActivity">
-        </activity>
-        <activity android:name=".xfermode.HeartMapActivity">
-        </activity>
-        <activity android:name=".xfermode.OfficialDemoActivity">
-        </activity>
         <activity android:name=".xfermode.RadarViewActivity">
         </activity>
-        <activity android:name=".xfermode.IrregularWaveActivity">
-        </activity>
-        <activity android:name=".xfermode.InvertedImageActivity">
-        </activity>
-        <activity android:name=".xfermode.SRCActivity">
-        </activity>
-        <activity android:name=".xfermode.LightBook_LightenActivity">
-        </activity>
-        <activity android:name=".xfermode.TwitterView_MultiplyActivity">
+        <activity android:name=".SRCActivity">
         </activity>
         <activity android:name=".maskFilter.MaskFilterActitivy">
         </activity>

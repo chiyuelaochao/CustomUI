@@ -1,98 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <TableLayout
+    <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:stretchColumns="2">
+        android:layout_height="wrap_content">
 
-        <TableRow>
-
-            <Button
-                android:id="@+id/roundsrcin"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="圆角"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:padding="3dp">
 
             <Button
-                android:id="@+id/invertsrcin"
-                android:layout_width="0dp"
+                android:id="@+id/official_demo"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="倒影图像"/>
-        </TableRow>
-
-        <TableRow>
+                android:text="官方demo"/>
 
             <Button
-                android:id="@+id/eraserview"
-                android:layout_width="0dp"
+                android:id="@+id/round_srcin"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="橡皮擦"/>
+                android:text="圆角srcin"/>
 
             <Button
-                android:id="@+id/guaguaview"
-                android:layout_width="0dp"
+                android:id="@+id/round_destin"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="刮刮卡"/>
-        </TableRow>
-
-        <TableRow>
+                android:text="圆角destin"/>
 
             <Button
-                android:id="@+id/roundsrcatop"
-                android:layout_width="0dp"
+                android:id="@+id/round_srcatop"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="圆角"/>
+                android:text="圆角srcatop"/>
 
             <Button
-                android:id="@+id/invertsrcatop"
-                android:layout_width="0dp"
+                android:id="@+id/invert_srcin"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="倒影图像"/>
-        </TableRow>
-    </TableLayout>
+                android:text="倒影srcin"/>
 
+            <Button
+                android:id="@+id/invert_destin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="倒影destin"/>
 
-    <com.caiwei.customui.xfermode.RoundImageView_SRCIN
-        android:id="@+id/roundsrcin_view"
+            <Button
+                android:id="@+id/invert_srcatop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="倒影srcatop"/>
+
+            <Button
+                android:id="@+id/eraser_srcout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="橡皮擦srcout"/>
+
+            <Button
+                android:id="@+id/guagua_srcout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="刮刮卡srcout"/>
+
+            <Button
+                android:id="@+id/heart_map_destin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="心电图DESTIN"/>
+
+            <Button
+                android:id="@+id/irregular_wave_destin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="波DESTIN"/>
+
+            <Button
+                android:id="@+id/light_book_lighten"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="light book"/>
+
+            <Button
+                android:id="@+id/twitter_multiply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="twitter multiply"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <com.caiwei.customui.xfermode.OfficialDemoView
+        android:id="@+id/official_demo_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-    <com.caiwei.customui.xfermode.InvertedImageView_SRCIN
-        android:id="@+id/invertsrcin_view"
+    <com.caiwei.customui.xfermode.RoundImageView_SRCIN
+        android:id="@+id/round_srcin_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"/>
 
-    <com.caiwei.customui.xfermode.EraserView_SRCOUT
-        android:id="@+id/eraserview_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone"/>
-
-    <com.caiwei.customui.xfermode.GuaGuaCardView_SRCOUT
-        android:id="@+id/guaguaview_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <com.caiwei.customui.xfermode.RoundImageView_DESTIN
+        android:id="@+id/round_destin_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:visibility="gone"/>
 
     <com.caiwei.customui.xfermode.RoundImageView_SRCATOP
-        android:id="@+id/roundsrcatop_view"
+        android:id="@+id/round_srcatop_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+
+    <com.caiwei.customui.xfermode.InvertedImageView_SRCIN
+        android:id="@+id/invert_srcin_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <com.caiwei.customui.xfermode.InvertedImageView_DESTIN
+        android:id="@+id/invert_destin_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"/>
 
     <com.caiwei.customui.xfermode.InvertedImageView_SRCATOP
-        android:id="@+id/invertsrcatop_view"
+        android:id="@+id/invert_srcatop_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+
+    <com.caiwei.customui.xfermode.EraserView_SRCOUT
+        android:id="@+id/eraser_srcout_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <com.caiwei.customui.xfermode.GuaGuaCardView_SRCOUT
+        android:id="@+id/guagua_srcout_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <com.caiwei.customui.xfermode.HeartMapView_DESTIN
+        android:id="@+id/heart_map_destin_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <com.caiwei.customui.xfermode.IrregularWaveView_DESTIN
+        android:id="@+id/irregular_wave_destin_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <com.caiwei.customui.xfermode.LightBookView_LIGHTEN
+        android:id="@+id/light_book_lighten_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <com.caiwei.customui.xfermode.TwitterView_MULTIPLY
+        android:id="@+id/twitter_multiply_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"/>
