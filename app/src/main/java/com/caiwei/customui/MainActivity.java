@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.caiwei.customui.maskFilter.MaskFilterActitivy;
-import com.caiwei.customui.xfermode.RadarViewActivity;
 
 /**
  * Created by Cai Wei on 5/6/2017.
@@ -19,7 +18,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findViewById(R.id.flow_layout_button).setOnClickListener(this);
-        findViewById(R.id.radar_button).setOnClickListener(this);
         findViewById(R.id.xfer_mode_button).setOnClickListener(this);
 
         findViewById(R.id.mask_filter_button).setOnClickListener(this);
@@ -34,11 +32,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.flow_layout_button:
                 goToPage(FlowLayoutActivity.class);
                 break;
-            case R.id.radar_button:
-                goToPage(RadarViewActivity.class);
-                break;
             case R.id.xfer_mode_button:
-                goToPage(SRCActivity.class);
+                goToPage(XferModeActivity.class);
                 break;
             case R.id.mask_filter_button:
                 goToPage(MaskFilterActitivy.class);

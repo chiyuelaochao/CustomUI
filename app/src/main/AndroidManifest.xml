@@ -20,9 +20,7 @@
         <activity
             android:name=".FlowLayoutActivity"
             android:launchMode="singleTask"/>
-        <activity android:name=".xfermode.RadarViewActivity">
-        </activity>
-        <activity android:name=".SRCActivity">
+        <activity android:name=".XferModeActivity">
         </activity>
         <activity android:name=".maskFilter.MaskFilterActitivy">
         </activity>

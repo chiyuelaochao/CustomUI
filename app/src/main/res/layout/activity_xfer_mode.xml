@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical">
@@ -75,6 +76,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="心电图DESTIN"/>
+
+            <Button
+                android:id="@+id/radar_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="radar"/>
 
             <Button
                 android:id="@+id/irregular_wave_destin"
@@ -156,6 +163,40 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"/>
+
+    <RelativeLayout
+        android:id="@+id/radar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <com.caiwei.customui.xfermode.RadarView
+            android:id="@+id/radar_view"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_centerInParent="true"
+            app:backgroundColor="#000000"
+            app:circleNum="4"
+            app:endColor="#aaff0000"
+            app:lineColor="#00ff00"
+            app:startColor="#aa0000ff"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:onClick="start"
+            android:text="开始"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:onClick="stop"
+            android:text="停止"/>
+    </RelativeLayout>
 
     <com.caiwei.customui.xfermode.IrregularWaveView_DESTIN
         android:id="@+id/irregular_wave_destin_view"

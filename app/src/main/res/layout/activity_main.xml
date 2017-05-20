@@ -13,12 +13,6 @@
         android:text="FlowLayout"/>
 
     <Button
-        android:id="@+id/radar_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="XferMode1"/>
-
-    <Button
         android:id="@+id/xfer_mode_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
