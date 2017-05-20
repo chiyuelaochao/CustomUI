@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FlowLayoutActivity"
+            android:name=".LayoutActivity"
             android:launchMode="singleTask"/>
         <activity android:name=".XferModeActivity">
         </activity>
@@ -29,6 +29,8 @@
         <activity android:name=".RevealActivity">
         </activity>
         <activity android:name=".SearchViewActivity">
+        </activity>
+        <activity android:name=".PaintActivity">
         </activity>
     </application>
 

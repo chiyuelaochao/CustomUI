@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findViewById(R.id.flow_layout_button).setOnClickListener(this);
+        findViewById(R.id.paint_button).setOnClickListener(this);
         findViewById(R.id.xfer_mode_button).setOnClickListener(this);
 
         findViewById(R.id.mask_filter_button).setOnClickListener(this);
@@ -30,7 +31,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.flow_layout_button:
-                goToPage(FlowLayoutActivity.class);
+                goToPage(LayoutActivity.class);
+                break;
+            case R.id.paint_button:
+                goToPage(PaintActivity.class);
                 break;
             case R.id.xfer_mode_button:
                 goToPage(XferModeActivity.class);

@@ -22,13 +22,19 @@
                 android:id="@+id/flow_layout_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="flow_layout"/>
+                android:text="flow"/>
+
+            <Button
+                android:id="@+id/waterflow_john_layout_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="waterflow john"/>
 
             <Button
                 android:id="@+id/waterflow_layout_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="waterflow_layout_button"/>
+                android:text="waterflow"/>
         </LinearLayout>
     </HorizontalScrollView>
 
@@ -108,6 +114,31 @@
                 android:text="hel2"/>
 
         </com.caiwei.customui.layout.FlowLayout>
+
+        <LinearLayout
+            android:id="@+id/waterflow_john_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/add_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="添加图片"/>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.caiwei.customui.layout.WaterfallJohnLayout
+                    android:id="@+id/waterfallLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+            </ScrollView>
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/waterflow_layout"
