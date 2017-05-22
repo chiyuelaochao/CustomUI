@@ -29,11 +29,7 @@ public class InitViews {
                     @Override
                     public void onClick(View v) {
                         for (ButtonAndLayout viewEntity : buttonAndLayouts) {
-                            if (v.getId() == viewEntity.button.getId()) {
-                                viewEntity.layout.setVisibility(View.VISIBLE);
-                            } else {
-                                viewEntity.layout.setVisibility(View.GONE);
-                            }
+                            viewEntity.layout.setVisibility(v.getId() == viewEntity.button.getId() ? View.VISIBLE : View.GONE);
                         }
                     }
                 });

@@ -34,17 +34,14 @@ public class PaintActivity extends AppCompatActivity {
                         while (progress <= 100) {
                             progress += 2;
                             mProgressbar.setProgress(progress);
-
                             try {
                                 Thread.sleep(100);
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
                         }
-
                     }
                 }).start();
-
             }
         });
     }

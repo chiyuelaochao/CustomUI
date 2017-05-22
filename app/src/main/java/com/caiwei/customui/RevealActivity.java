@@ -7,7 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.caiwei.customui.canvas.GallaryHorizontalScrollView;
+import com.caiwei.customui.canvas.GalleryHorizontalScrollView;
 import com.caiwei.customui.canvas.RevealDrawable;
 
 public class RevealActivity extends AppCompatActivity {
@@ -68,7 +68,6 @@ public class RevealActivity extends AppCompatActivity {
                 iv.getDrawable().setLevel(level);
             }
         });
-
     }
 
 
@@ -77,19 +76,16 @@ public class RevealActivity extends AppCompatActivity {
     }
 
     private void initView() {
-
         for (int i = 0; i < mImgIds.length; i++) {
-
             RevealDrawable rd = new RevealDrawable(
                     getResources().getDrawable(mImgIds[i]),
                     getResources().getDrawable(mImgIds_active[i]),
                     RevealDrawable.HORIZONTAL
             );
-
             revealDrawables[i] = rd;
         }
 
-        GallaryHorizontalScrollView hzv = (GallaryHorizontalScrollView) findViewById(R.id.hsv);
+        GalleryHorizontalScrollView hzv = (GalleryHorizontalScrollView) findViewById(R.id.hsv);
         if (hzv != null) {
             hzv.addImageViews(revealDrawables);
         } else {

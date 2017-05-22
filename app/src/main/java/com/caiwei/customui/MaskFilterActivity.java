@@ -1,15 +1,16 @@
-package com.caiwei.customui.maskFilter;
+package com.caiwei.customui;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
 
-import com.caiwei.customui.R;
+import com.caiwei.customui.maskFilter.EmbossMaskFilterView;
 
-public class MaskFilterActitivy extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
+public class MaskFilterActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
+    public final String TAG = getClass().getSimpleName();
     private EmbossMaskFilterView embossMaskFilterView;
     private CheckBox x, y, z;
     private SeekBar bar1, bar2, bar3;
@@ -29,8 +30,22 @@ public class MaskFilterActitivy extends AppCompatActivity implements SeekBar.OnS
 
     private SeekBar initSeekBar(int id) {
         SeekBar bar = (SeekBar) findViewById(id);
-        bar.setOnSeekBarChangeListener(this);
+        if (bar != null) {
+            bar.setOnSeekBarChangeListener(this);
+        }
         return bar;
+    }
+
+    @Override
+    public String toString() {
+        return "invalidateView(" +
+                "x=" + (this.x.isChecked() ? 1 : 0) +
+                ", y=" + (this.y.isChecked() ? 1 : 0) +
+                ", z=" + (this.z.isChecked() ? 1 : 0) +
+                ", light=" + (bar1.getProgress() / 100) +
+                ", specular=" + bar2.getProgress() +
+                ", blur=" + bar3.getProgress() +
+                ')';
     }
 
     private void invalidateView() {
@@ -40,50 +55,27 @@ public class MaskFilterActitivy extends AppCompatActivity implements SeekBar.OnS
         float light = bar1.getProgress() / 100;
         float specular = bar2.getProgress();
         float blur = bar3.getProgress();
-        embossMaskFilterView.setparam(x, y, z, light, specular, blur);
+        Log.e(TAG, this.toString());
+        embossMaskFilterView.setParam(x, y, z, light, specular, blur);
     }
 
     private CheckBox initCheckBox(int id) {
         CheckBox box = (CheckBox) findViewById(id);
-        box.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                switch (buttonView.getId()) {
-                    case R.id.box1:
-                        Log.e("main", "box1 = " + isChecked);
-                        invalidateView();
-                        break;
-                    case R.id.box2:
-                        Log.e("main", "box2 = " + isChecked);
-                        invalidateView();
-                        break;
-                    case R.id.box3:
-                        Log.e("main", "box3 = " + isChecked);
-                        invalidateView();
-                        break;
+        if (box != null) {
+            box.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    invalidateView();
                 }
-            }
-        });
+            });
+        }
 
         return box;
     }
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-        switch (seekBar.getId()) {
-            case R.id.seekBar1:
-                Log.e("main", "seekBar1 = " + progress / 100);
-                invalidateView();
-                break;
-            case R.id.seekBar2:
-                Log.e("main", "seekBar2 = " + progress);
-                invalidateView();
-                break;
-            case R.id.seekBar3:
-                Log.e("main", "seekBar3 = " + progress);
-                invalidateView();
-                break;
-        }
+        invalidateView();
     }
 
     @Override

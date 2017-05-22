@@ -12,15 +12,11 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 
-import java.util.Random;
-
 /**
  * Created Cai Wei on 2017/5/6.
  */
 
 class MinionView extends View {
-
-
     private static final int DEFAULT_SIZE = 200; //View默认大小
     private int mWidthUnspecified;
     private int mHeightUnspecified;
@@ -63,12 +59,6 @@ class MinionView extends View {
         setMeasuredDimension(measure(widthMeasureSpec, true), measure(heightMeasureSpec, false));
     }
 
-
-    /**
-     * @param origin
-     * @param isWidth 是否在测量宽
-     * @return
-     */
     private int measure(int origin, boolean isWidth) {
         int result;
         int specMode = MeasureSpec.getMode(origin);
@@ -93,10 +83,8 @@ class MinionView extends View {
                 if (result == 0) {
                     result = DEFAULT_SIZE;
                 }
-
                 break;
         }
-
         return result;
     }
 
@@ -132,17 +120,13 @@ class MinionView extends View {
         mFootHeight = mRadius * 0.4333f;
 
         mHandsHeight = (getHeight() + mBodyHeight) / 2 + mOffset - mRadius * 1.65f;
-
     }
 
     private void drawBody(Canvas canvas) {
-
         initPaint();
         mPaint.setColor(mColorBody);
         mPaint.setStyle(Paint.Style.FILL);
-
         canvas.drawRoundRect(mBodyRect, mRadius, mRadius, mPaint);
-
     }
 
     private void drawBodyStroke(Canvas canvas) {
@@ -235,7 +219,6 @@ class MinionView extends View {
         canvas.drawCircle(rect.left + h / 5, rect.top + h / 4, mStrokeWidth * 0.7f, mPaint);
 
         //画右吊带
-
         initPaint();
         mPaint.setColor(mColorClothes);
         mPaint.setStrokeWidth(mStrokeWidth);
@@ -263,28 +246,28 @@ class MinionView extends View {
         mPaint.setStyle(Paint.Style.STROKE);
 
         path.reset();
-        float radiusBigPokect = w / 2.0f;
+        float radiusBigPocket = w / 2.0f;
         path.moveTo(rect.left + 1.5f * w, rect.bottom - h / 4);
         path.lineTo(rect.right - 1.5f * w, rect.bottom - h / 4);
         path.lineTo(rect.right - 1.5f * w, rect.bottom + h / 4);
-        path.addArc(rect.right - 1.5f * w - radiusBigPokect * 2, rect.bottom + h / 4 - radiusBigPokect,
-                rect.right - 1.5f * w, rect.bottom + h / 4 + radiusBigPokect, 0, 90);
-        path.lineTo(rect.left + 1.5f * w + radiusBigPokect, rect.bottom + h / 4 + radiusBigPokect);
+        path.addArc(rect.right - 1.5f * w - radiusBigPocket * 2, rect.bottom + h / 4 - radiusBigPocket,
+                rect.right - 1.5f * w, rect.bottom + h / 4 + radiusBigPocket, 0, 90);
+        path.lineTo(rect.left + 1.5f * w + radiusBigPocket, rect.bottom + h / 4 + radiusBigPocket);
 
-        path.addArc(rect.left + 1.5f * w, rect.bottom + h / 4 - radiusBigPokect,
-                rect.left + 1.5f * w + 2 * radiusBigPokect, rect.bottom + h / 4 + radiusBigPokect, 90, 90);
+        path.addArc(rect.left + 1.5f * w, rect.bottom + h / 4 - radiusBigPocket,
+                rect.left + 1.5f * w + 2 * radiusBigPocket, rect.bottom + h / 4 + radiusBigPocket, 90, 90);
         path.lineTo(rect.left + 1.5f * w, rect.bottom - h / 4 - mOffset);
         canvas.drawPath(path, mPaint);
 
-//        下边一竖，分开裤子
+//      下边一竖，分开裤子
         canvas.drawLine(mBodyRect.left + mBodyWidth / 2, mBodyRect.bottom - h * 0.8f, mBodyRect.left + mBodyWidth / 2, mBodyRect.bottom, mPaint);
 //      左边的小口袋
-        float radiusSamllPokect = w * 1.2f;
-        canvas.drawArc(mBodyRect.left - radiusSamllPokect, mBodyRect.bottom - mRadius - radiusSamllPokect,
-                mBodyRect.left + radiusSamllPokect, mBodyRect.bottom - mRadius + radiusSamllPokect, 80, -60, false, mPaint);
+        float radiusSmallPocket = w * 1.2f;
+        canvas.drawArc(mBodyRect.left - radiusSmallPocket, mBodyRect.bottom - mRadius - radiusSmallPocket,
+                mBodyRect.left + radiusSmallPocket, mBodyRect.bottom - mRadius + radiusSmallPocket, 80, -60, false, mPaint);
 //      右边小口袋
-        canvas.drawArc(mBodyRect.right - radiusSamllPokect, mBodyRect.bottom - mRadius - radiusSamllPokect,
-                mBodyRect.right + radiusSamllPokect, mBodyRect.bottom - mRadius + radiusSamllPokect, 100, 60, false, mPaint);
+        canvas.drawArc(mBodyRect.right - radiusSmallPocket, mBodyRect.bottom - mRadius - radiusSmallPocket,
+                mBodyRect.right + radiusSmallPocket, mBodyRect.bottom - mRadius + radiusSmallPocket, 100, 60, false, mPaint);
 //        canvas.drawArc(left + w/5,);
     }
 
@@ -341,7 +324,6 @@ class MinionView extends View {
         rect.right = rect.left + radiusMonth * 2;
         rect.bottom = rect.top + radiusMonth * 2;
         canvas.drawArc(rect, 95, -20, false, mPaint);
-
     }
 
 
@@ -356,7 +338,7 @@ class MinionView extends View {
         float footWidthA = mRadius * 0.5f;//脚宽度大-到半圆结束
         float footWidthB = footWidthA / 3;//脚宽度-比较细的部分
 
-        //      左脚
+        // 左脚
         Path path = new Path();
         path.moveTo(leftFootStartX, leftFootStartY);
         path.lineTo(leftFootStartX, leftFootStartY + mFootHeight);
@@ -390,12 +372,9 @@ class MinionView extends View {
         path.lineTo(rectF.right - radiusFoot - footWidthB, rightFootStartY);
         path.lineTo(rightFootStartX, rightFootStartY);
         canvas.drawPath(path, mPaint);
-
-
     }
 
     private void drawFeetShadow(Canvas canvas) {
-
         mPaint.setColor(getResources().getColor(android.R.color.darker_gray));
         canvas.drawOval(mBodyRect.left + mBodyWidth * 0.15f, mBodyRect.bottom - mOffset + mFootHeight,
                 mBodyRect.right - mBodyWidth * 0.15f, mBodyRect.bottom - mOffset + mFootHeight + mStrokeWidth * 1.3f, mPaint);
@@ -423,7 +402,6 @@ class MinionView extends View {
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setColor(mColorStroke);
         canvas.drawPath(path, mPaint);
-
 
 //        右手
         path.reset();

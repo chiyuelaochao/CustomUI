@@ -7,7 +7,6 @@ import android.graphics.Color;
 import android.graphics.EmbossMaskFilter;
 import android.graphics.Paint;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
 /**
@@ -44,7 +43,7 @@ public class EmbossMaskFilterView extends View {
     private Canvas canvas;
 
     @SuppressLint("NewApi")
-    public void setparam(float x, float y, float z, float light, float specular, float blur) {
+    public void setParam(float x, float y, float z, float light, float specular, float blur) {
         emboss = new EmbossMaskFilter(new float[]{x, y, z}, light, specular, blur);
         paint.setMaskFilter(emboss);
         canvas.drawText("蔡炜", 30, 400, paint);

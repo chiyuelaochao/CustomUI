@@ -15,12 +15,6 @@ import android.view.View;
 import com.caiwei.customui.R;
 
 /**
- * 抗锯齿
- *
- * @author neng
- */
-
-/**
  * Created by wei.cai on 2017/5/19.
  */
 
@@ -31,7 +25,6 @@ public class DrawFilterView extends View {
 
     public DrawFilterView(Context context) {
         this(context, null);
-
     }
 
 

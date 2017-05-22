@@ -11,19 +11,19 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-public class GallaryHorizontalScrollView extends HorizontalScrollView
+public class GalleryHorizontalScrollView extends HorizontalScrollView
         implements OnTouchListener {
     private final String TAG = getClass().getSimpleName();
     private LinearLayout container;
     private int centerX;
     private int icon_width;
 
-    public GallaryHorizontalScrollView(Context context, AttributeSet attrs) {
+    public GalleryHorizontalScrollView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public GallaryHorizontalScrollView(Context context) {
+    public GalleryHorizontalScrollView(Context context) {
         super(context);
         init();
     }

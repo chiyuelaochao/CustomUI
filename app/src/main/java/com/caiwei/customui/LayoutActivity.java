@@ -46,19 +46,12 @@ public class LayoutActivity extends AppCompatActivity {
                 100,
                 100);*/
         ImageView imageView = new ImageView(this);
-        if (num % IMG_COUNT == 0) {
-            imageView.setImageResource(R.drawable.pic_1);
-        } else if (num % IMG_COUNT == 1) {
-            imageView.setImageResource(R.drawable.pic_2);
-        } else if (num % IMG_COUNT == 2) {
-            imageView.setImageResource(R.drawable.pic_3);
-        } else if (num % IMG_COUNT == 3) {
-            imageView.setImageResource(R.drawable.pic_4);
-        } else if (num % IMG_COUNT == 4) {
-            imageView.setImageResource(R.drawable.pic_5);
+        for (int i = 0; i < 5; i++) {
+            if (num % IMG_COUNT == i) {
+                imageView.setImageResource(images[i]);
+            }
         }
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-
         waterfallLayout.addView(imageView, layoutParams);
         waterfallLayout.setOnItemClickListener(new WaterfallJohnLayout.OnItemClickListener() {
             @Override
@@ -67,4 +60,12 @@ public class LayoutActivity extends AppCompatActivity {
             }
         });
     }
+
+    private int[] images = {
+            R.drawable.pic_1,
+            R.drawable.pic_2,
+            R.drawable.pic_3,
+            R.drawable.pic_4,
+            R.drawable.pic_5
+    };
 }

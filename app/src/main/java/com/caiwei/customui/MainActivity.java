@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.caiwei.customui.maskFilter.MaskFilterActitivy;
-
 /**
  * Created by Cai Wei on 5/6/2017.
  */
@@ -40,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 goToPage(XferModeActivity.class);
                 break;
             case R.id.mask_filter_button:
-                goToPage(MaskFilterActitivy.class);
+                goToPage(MaskFilterActivity.class);
                 break;
             case R.id.canvas_button:
                 goToPage(CanvasActivity.class);

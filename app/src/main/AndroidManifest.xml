@@ -22,7 +22,7 @@
             android:launchMode="singleTask"/>
         <activity android:name=".XferModeActivity">
         </activity>
-        <activity android:name=".maskFilter.MaskFilterActitivy">
+        <activity android:name=".MaskFilterActivity">
         </activity>
         <activity android:name=".CanvasActivity">
         </activity>

@@ -10,7 +10,7 @@
         android:clickable="true"
         android:focusable="true"/>
 
-    <com.caiwei.customui.canvas.GallaryHorizontalScrollView
+    <com.caiwei.customui.canvas.GalleryHorizontalScrollView
         android:id="@+id/hsv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
