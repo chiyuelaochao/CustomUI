@@ -8,6 +8,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTask">
@@ -17,23 +18,15 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
-            android:name=".LayoutActivity"
-            android:launchMode="singleTask"/>
-        <activity android:name=".XferModeActivity">
-        </activity>
-        <activity android:name=".MaskFilterActivity">
-        </activity>
-        <activity android:name=".CanvasActivity">
-        </activity>
-        <activity android:name=".RevealActivity">
-        </activity>
-        <activity android:name=".SearchViewActivity">
-        </activity>
-        <activity android:name=".PaintActivity">
-        </activity>
-        <activity android:name=".PathActivity">
-        </activity>
+
+        <activity android:name=".LayoutActivity"/>
+        <activity android:name=".XferModeActivity"/>
+        <activity android:name=".MaskFilterActivity"/>
+        <activity android:name=".CanvasActivity"/>
+        <activity android:name=".RevealActivity"/>
+        <activity android:name=".SearchViewActivity"/>
+        <activity android:name=".PaintActivity"/>
+        <activity android:name=".PathActivity"/>
     </application>
 
 </manifest>
