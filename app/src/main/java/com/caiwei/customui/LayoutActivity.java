@@ -22,8 +22,8 @@ public class LayoutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_layout);
         InitViews initViews = new InitViews();
         initViews.initButtonAndLayout(this, R.id.flow_layout_button, R.id.flow_layout);
-        initViews.initButtonAndLayout(this, R.id.waterflow_layout_button, R.id.waterflow_layout);
-        initViews.initButtonAndLayout(this, R.id.waterflow_john_layout_button, R.id.waterflow_john_layout);
+        initViews.initButtonAndLayout(this, R.id.waterflow_layout_button, R.id.water_flow_view);
+        initViews.initButtonAndLayout(this, R.id.waterflow_john_layout_button, R.id.water_flow_john_layout);
 
 
         final WaterfallJohnLayout waterfallLayout = ((WaterfallJohnLayout) findViewById(R.id.waterfallLayout));
