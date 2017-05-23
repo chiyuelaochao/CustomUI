@@ -15,14 +15,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        findViewById(R.id.flow_layout_button).setOnClickListener(this);
-        findViewById(R.id.paint_button).setOnClickListener(this);
-        findViewById(R.id.xfer_mode_button).setOnClickListener(this);
-
-        findViewById(R.id.mask_filter_button).setOnClickListener(this);
-        findViewById(R.id.canvas_button).setOnClickListener(this);
-        findViewById(R.id.reveal_button).setOnClickListener(this);
-        findViewById(R.id.search_button).setOnClickListener(this);
+        initButton(R.id.flow_layout_button);
+        initButton(R.id.paint_button);
+        initButton(R.id.xfer_mode_button);
+        initButton(R.id.mask_filter_button);
+        initButton(R.id.canvas_button);
+        initButton(R.id.reveal_button);
+        initButton(R.id.search_button);
+        initButton(R.id.path_button);
     }
 
     @Override
@@ -49,6 +49,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.search_button:
                 goToPage(SearchViewActivity.class);
                 break;
+            case R.id.path_button:
+                goToPage(PathActivity.class);
+                break;
+        }
+    }
+
+    private void initButton(int id) {
+        View v = findViewById(id);
+        if (v != null) {
+            v.setOnClickListener(this);
         }
     }
 

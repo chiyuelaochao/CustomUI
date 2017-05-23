@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:padding="3dp">
+
+            <Button
+                android:id="@+id/curve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="curve"/>
+
+            <Button
+                android:id="@+id/path_fill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="path_fill"/>
+
+            <Button
+                android:id="@+id/path_op"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="path_op"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <com.caiwei.customui.path.CurveView
+        android:id="@+id/curve_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <com.caiwei.customui.path.PathFillView
+        android:id="@+id/path_fill_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <com.caiwei.customui.path.PathOpView
+        android:id="@+id/path_op_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+</LinearLayout>
+

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.caiwei.customui">
+<manifest package="com.caiwei.customui"
+          xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
@@ -31,6 +31,8 @@
         <activity android:name=".SearchViewActivity">
         </activity>
         <activity android:name=".PaintActivity">
+        </activity>
+        <activity android:name=".PathActivity">
         </activity>
     </application>
 
