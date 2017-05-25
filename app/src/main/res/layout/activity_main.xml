@@ -100,6 +100,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Path"/>
+
+        <Button
+            android:id="@+id/path_measure_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Path measure"/>
     </LinearLayout>
 
 </LinearLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:padding="3dp">
+
+            <Button
+                android:id="@+id/path_measure_basic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Basic"/>
+
+            <Button
+                android:id="@+id/arrow_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Arrow"/>
+
+            <Button
+                android:id="@+id/wave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wave"/>
+
+            <Button
+                android:id="@+id/face_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="face loading"/>
+
+            <Button
+                android:id="@+id/circle_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="circle loading"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <com.caiwei.customui.path.PathMeasureBasicView
+        android:id="@+id/path_measure_basic_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <com.caiwei.customui.path.ArrowCircleView
+        android:id="@+id/arrow_circle_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <com.caiwei.customui.path.WaveView
+        android:id="@+id/wave_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <com.caiwei.customui.path.FaceLoadingView
+        android:id="@+id/face_loading_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <com.caiwei.customui.path.CircleLoadingView
+        android:id="@+id/circle_loading_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+</LinearLayout>

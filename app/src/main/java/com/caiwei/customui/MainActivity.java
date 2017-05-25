@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initButton(R.id.reveal_button);
         initButton(R.id.search_button);
         initButton(R.id.path_button);
+        initButton(R.id.path_measure_button);
     }
 
     @Override
@@ -51,6 +52,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.path_button:
                 goToPage(PathActivity.class);
+                break;
+            case R.id.path_measure_button:
+                goToPage(PathMeasureActivity.class);
                 break;
         }
     }

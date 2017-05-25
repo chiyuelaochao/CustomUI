@@ -8,7 +8,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTask">
@@ -18,7 +17,6 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
         <activity android:name=".LayoutActivity"/>
         <activity android:name=".XferModeActivity"/>
         <activity android:name=".MaskFilterActivity"/>
@@ -27,6 +25,8 @@
         <activity android:name=".SearchViewActivity"/>
         <activity android:name=".PaintActivity"/>
         <activity android:name=".PathActivity"/>
+        <activity android:name=".PathMeasureActivity">
+        </activity>
     </application>
 
 </manifest>
