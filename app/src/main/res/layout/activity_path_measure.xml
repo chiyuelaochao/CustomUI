@@ -35,16 +35,16 @@
                 android:text="Wave"/>
 
             <Button
-                android:id="@+id/face_loading"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="face loading"/>
-
-            <Button
                 android:id="@+id/circle_loading"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="circle loading"/>
+
+            <Button
+                android:id="@+id/face_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="face loading"/>
         </LinearLayout>
     </HorizontalScrollView>
 
@@ -72,10 +72,28 @@
         android:layout_gravity="center"
         android:visibility="gone"/>
 
-    <com.caiwei.customui.path.CircleLoadingView
-        android:id="@+id/circle_loading_view"
+    <LinearLayout
+        android:id="@+id/circle_loading_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:visibility="gone"/>
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="start"/>
+
+        <Button
+            android:id="@+id/end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="end"/>
+
+        <com.caiwei.customui.path.CircleLoadingView
+            android:id="@+id/circle_loading_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
 </LinearLayout>

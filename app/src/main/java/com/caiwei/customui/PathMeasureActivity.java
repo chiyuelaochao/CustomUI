@@ -2,7 +2,9 @@ package com.caiwei.customui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
+import com.caiwei.customui.path.CircleLoadingView;
 import com.caiwei.customui.path.WaveView;
 
 public class PathMeasureActivity extends AppCompatActivity {
@@ -17,9 +19,10 @@ public class PathMeasureActivity extends AppCompatActivity {
         initViews.initButtonAndLayout(this, R.id.path_measure_basic, R.id.path_measure_basic_view);
         initViews.initButtonAndLayout(this, R.id.arrow_circle, R.id.arrow_circle_view);
         initViews.initButtonAndLayout(this, R.id.face_loading, R.id.face_loading_view);
-        initViews.initButtonAndLayout(this, R.id.circle_loading, R.id.circle_loading_view);
+        initViews.initButtonAndLayout(this, R.id.circle_loading, R.id.circle_loading_layout);
 
         initWaveView();
+        initCircleLoadingView();
     }
 
     private void initWaveView() {
@@ -28,4 +31,21 @@ public class PathMeasureActivity extends AppCompatActivity {
             waveView.startAnimation();
         }
     }
+
+    private void initCircleLoadingView() {
+        final CircleLoadingView view = (CircleLoadingView) findViewById(R.id.circle_loading_view);
+        findViewById(R.id.start).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                view.start();
+            }
+        });
+        findViewById(R.id.end).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                view.end();
+            }
+        });
+    }
+
 }

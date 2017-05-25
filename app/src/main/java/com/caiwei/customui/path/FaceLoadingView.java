@@ -116,14 +116,19 @@ public class FaceLoadingView extends View {
             isStart = false;
         }
         mRadius = getWidth() / 7F / 2;
+
         if (unreachedPath == null) {
             unreachedPath = new Path();
         }
-        unreachedPath.addRoundRect(new RectF(lineWidth, lineWidth, w - lineWidth, h - lineWidth), w / 6, w / 6, Path.Direction.CCW);
+        unreachedPath.addRoundRect(new RectF(lineWidth, lineWidth, w - lineWidth, h - lineWidth),
+                w / 6, w / 6, Path.Direction.CCW);
+
         if (reachedPath == null) {
             reachedPath = new Path();
         }
-        reachedPath.addRoundRect(new RectF(lineWidth, lineWidth, w - lineWidth, h - lineWidth), w / 6, w / 6, Path.Direction.CW);
+
+        reachedPath.addRoundRect(new RectF(lineWidth, lineWidth, w - lineWidth, h - lineWidth),
+                w / 6, w / 6, Path.Direction.CW);
     }
 
 

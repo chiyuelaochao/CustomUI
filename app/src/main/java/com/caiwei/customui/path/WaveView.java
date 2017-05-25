@@ -85,8 +85,7 @@ public class WaveView extends View {
         Log.d(TAG, "pos[0] = " + pos[0] + "pos[1] = " + pos[1]);
         Log.d(TAG, "tan[0] = " + tan[0] + "tan[1] = " + tan[1]);
         if (posTan) {
-            // 方案一 ：自己计算
-            // 将tan值通过反正切函数得到对应的弧度，在转化成对应的角度度数
+            // 方案一：自己计算, 将tan值通过反正切函数得到对应的弧度，在转化成对应的角度度数
             /*float degrees = (float) (Math.atan2(tan[1],tan[0])*180f / Math.PI);
             mMatrix.postRotate(degrees, mBitMap.getWidth()/2, mBitMap.getHeight() / 2);
             mMatrix.postTranslate(pos[0]- mBitMap.getWidth() / 2,pos[1] - mBitMap.getHeight());
