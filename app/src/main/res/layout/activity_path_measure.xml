@@ -67,13 +67,15 @@
 
     <com.caiwei.customui.path.FaceLoadingView
         android:id="@+id/face_loading_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
         android:visibility="gone"/>
 
     <com.caiwei.customui.path.CircleLoadingView
         android:id="@+id/circle_loading_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_gravity="center"
         android:visibility="gone"/>
 </LinearLayout>
