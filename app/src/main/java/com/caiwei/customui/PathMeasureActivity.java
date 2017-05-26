@@ -3,8 +3,10 @@ package com.caiwei.customui;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import com.caiwei.customui.path.CircleLoadingView;
+import com.caiwei.customui.path.TrashCanView;
 import com.caiwei.customui.path.WaveView;
 
 public class PathMeasureActivity extends AppCompatActivity {
@@ -20,9 +22,24 @@ public class PathMeasureActivity extends AppCompatActivity {
         initViews.initButtonAndLayout(this, R.id.arrow_circle, R.id.arrow_circle_view);
         initViews.initButtonAndLayout(this, R.id.face_loading, R.id.face_loading_view);
         initViews.initButtonAndLayout(this, R.id.circle_loading, R.id.circle_loading_layout);
+        initViews.initButtonAndLayout(this, R.id.trash_can, R.id.trash_can_layout);
 
         initWaveView();
         initCircleLoadingView();
+        initTrashCanView();
+    }
+
+    private void initTrashCanView() {
+        Button button = (Button) findViewById(R.id.trash_can_button);
+        final TrashCanView trashCanView = (TrashCanView) findViewById(R.id.trash_can_view);
+        if (button != null) {
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    trashCanView.startAnimation();
+                }
+            });
+        }
     }
 
     private void initWaveView() {

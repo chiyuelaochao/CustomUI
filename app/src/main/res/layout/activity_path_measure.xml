@@ -45,6 +45,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="face loading"/>
+
+            <Button
+                android:id="@+id/trash_can"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="trash can"/>
         </LinearLayout>
     </HorizontalScrollView>
 
@@ -93,6 +99,25 @@
 
         <com.caiwei.customui.path.CircleLoadingView
             android:id="@+id/circle_loading_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/trash_can_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/trash_can_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="click me"/>
+
+        <com.caiwei.customui.path.TrashCanView
+            android:id="@+id/trash_can_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
     </LinearLayout>
