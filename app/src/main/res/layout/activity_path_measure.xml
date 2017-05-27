@@ -29,10 +29,16 @@
                 android:text="Arrow"/>
 
             <Button
-                android:id="@+id/wave"
+                android:id="@+id/wave_boat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Wave"/>
+                android:text="Wave boat"/>
+
+            <Button
+                android:id="@+id/wave_rise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wave rise"/>
 
             <Button
                 android:id="@+id/circle_loading"
@@ -65,7 +71,7 @@
         android:layout_height="match_parent"
         android:visibility="gone"/>
 
-    <com.caiwei.customui.path.WaveView
+    <com.caiwei.customui.path.WaveBoatView
         android:id="@+id/wave_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -119,6 +125,32 @@
 
         <com.caiwei.customui.path.TrashCanView
             android:id="@+id/trash_can_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/wave_rising_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/wave_rising_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="start"/>
+
+        <Button
+            android:id="@+id/wave_rising_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="reset"/>
+
+        <com.caiwei.customui.path.WaveRiseView
+            android:id="@+id/wave_rising_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>

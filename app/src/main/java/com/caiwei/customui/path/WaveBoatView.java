@@ -22,7 +22,7 @@ import com.caiwei.customui.R;
  * Created by Cai Wei on 2017/5/25.
  */
 
-public class WaveView extends View {
+public class WaveBoatView extends View {
     private final String TAG = getClass().getSimpleName();
     private static final int INT_WAVE_LENGTH = 1000;
 
@@ -37,12 +37,12 @@ public class WaveView extends View {
     private Matrix mMatrix;
     private float faction;
 
-    public WaveView(Context context) {
+    public WaveBoatView(Context context) {
         super(context);
         init();
     }
 
-    public WaveView(Context context, @Nullable AttributeSet attrs) {
+    public WaveBoatView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init();
     }
@@ -70,8 +70,8 @@ public class WaveView extends View {
         int halfWaveLength = INT_WAVE_LENGTH / 2;
         mPath.moveTo(-INT_WAVE_LENGTH + mDeltaX, originY);
         for (int i = -INT_WAVE_LENGTH; i < getWidth() + INT_WAVE_LENGTH; i += INT_WAVE_LENGTH) {
-            mPath.rQuadTo(halfWaveLength / 2, 60, halfWaveLength, 0);
-            mPath.rQuadTo(halfWaveLength / 2, -60, halfWaveLength, 0);
+            mPath.rQuadTo(halfWaveLength / 2, 100, halfWaveLength, 0);
+            mPath.rQuadTo(halfWaveLength / 2, -100, halfWaveLength, 0);
         }
         mPath.lineTo(getWidth(), getHeight());
         mPath.lineTo(0, getHeight());
@@ -113,7 +113,7 @@ public class WaveView extends View {
         animator.start();*/
 
         ValueAnimator animator = ValueAnimator.ofFloat(0, 1);
-        animator.setDuration(5000);
+        animator.setDuration(10000);
         animator.setInterpolator(new LinearInterpolator());
         animator.setRepeatCount(ValueAnimator.INFINITE);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
