@@ -54,69 +54,58 @@ public class TrashCanView extends View {
         super.onDraw(canvas);
         //画出垃圾桶下面区域
         drawBottom();
+        canvas.drawColor(Color.GRAY);
         canvas.drawPath(mPath, mPaint);
         //画出垃圾桶盖子
         //动画判断是否刷新视图
         if (animator != null && animator.isRunning()) {
             //动画执行过程中具体帧值
             openProgress = (Float) animator.getAnimatedValue();
-            drawTop(canvas, 0);
-            drawTop(canvas, 1);
-            drawTop(canvas, 2);
-            invalidate();
-        } else if (animator != null && !animator.isRunning()) {
-            drawTop(canvas, 1);
-            drawTop(canvas, 2);
-        } else {//禁止状态
-            drawTop(canvas, 1);
-            drawTop(canvas, 2);
-        }
-    }
 
-    /**
-     * 画出垃圾桶上面盖子
-     */
-    private void drawTop(Canvas canvas, int type) {
-        if (type == STATUS_RUNNING) {
-            //3.画垃圾桶打开动画
+            //3.画垃圾桶打开动画，旋转画布
             canvas.rotate(
                     openProgress * 30,
                     mWidth / 2 + (mBodyWith / 2),
                     mHeight / 2 - (mBodyHeight / 2)
             );
-        } else if (type == STATUS_PAINT_LINE) {
-            //1画出禁止状态的垃圾桶盖子线条
-            canvas.drawLine(
-                    mWidth / 2 - (mBodyWith / 2) - 10,
-                    mHeight / 2 - (mBodyHeight / 2) - 10,
-                    mWidth / 2 + (mBodyWith / 2) + 10,
-                    mHeight / 2 - (mBodyHeight / 2) - 10,
-                    mPaint
-            );
-        } else if (type == STATUS_PAINT_HEAD) {
-            //2画出静止状态盖子上面的把手
-            canvas.drawRect(
-                    mWidth / 2 - (mBodyWith / 9),
-                    mHeight / 2 - (mBodyHeight / 2) - 20, mWidth / 2 + (mBodyWith / 9),
-                    mHeight / 2 - (mBodyHeight / 2) - 10,
-                    mPaint
-            );
+
+            invalidate();
         }
+
+        //1画出静止状态的垃圾桶盖子线条
+        canvas.drawLine(
+                mWidth / 2 - (mBodyWith / 2) - 10,
+                mHeight / 2 - (mBodyHeight / 2) - 10,
+                mWidth / 2 + (mBodyWith / 2) + 10,
+                mHeight / 2 - (mBodyHeight / 2) - 10,
+                mPaint
+        );
+
+        //2画出静止状态盖子上面的把手
+        canvas.drawRect(
+                mWidth / 2 - (mBodyWith / 9),
+                mHeight / 2 - (mBodyHeight / 2) - 20,
+                mWidth / 2 + (mBodyWith / 9),
+                mHeight / 2 - (mBodyHeight / 2) - 10,
+                mPaint
+        );
     }
+
 
     /**
      * 画出垃圾桶下面区域
      */
     private void drawBottom() {
-        //花垃圾桶边缘
+        //画垃圾桶边缘
         //1.移动到最左上角的点
-        //2.连接左下角的点
-        //3.连接右下角的点
-        //4.连接右上角的点
         mPath.moveTo(mWidth / 2 - (mBodyWith / 2), mHeight / 2 - (mBodyHeight / 2));
+        //2.连接左下角的点
         mPath.lineTo(mWidth / 2 - (mBodyWith / 3), mHeight / 2 + (mBodyHeight / 2));
+        //3.连接右下角的点
         mPath.lineTo(mWidth / 2 + (mBodyWith / 3), mHeight / 2 + (mBodyHeight / 2));
+        //4.连接右上角的点
         mPath.lineTo(mWidth / 2 + (mBodyWith / 2), mHeight / 2 - (mBodyHeight / 2));
+
         //画里面的竖线
         //1.画左边一条线
         mPath.moveTo(mWidth / 2 - (mBodyWith / 5), mHeight / 2 - (mBodyHeight / 3));
@@ -135,7 +124,7 @@ public class TrashCanView extends View {
         int width = getMeasureSize(defaultSize, widthMeasureSpec);
         int height = getMeasureSize(defaultSize, heightMeasureSpec);
         setMeasuredDimension(width, height);
-        //賦值view的寬和高
+        //赋值view的宽和高
         mWidth = width > 0 ? width : 0;
         mHeight = height > 0 ? height : 0;
     }
@@ -169,8 +158,8 @@ public class TrashCanView extends View {
      * 开始动画
      */
     public void startAnimation() {
-        animator = ValueAnimator.ofFloat(1f, 0f);
-        animator.setDuration(2000);
+        animator = ValueAnimator.ofFloat(0f, 1f, 0f);
+        animator.setDuration(3000);
         animator.start();
         invalidate();
     }
