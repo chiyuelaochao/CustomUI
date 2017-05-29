@@ -1,9 +1,11 @@
 package com.caiwei.customui;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Toast;
 
 /**
  * Created by Cai Wei on 5/6/2017.
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initButton(R.id.search_button);
         initButton(R.id.path_button);
         initButton(R.id.path_measure_button);
+        initButton(R.id.svg_button);
+        initButton(R.id.plus_button);
     }
 
     @Override
@@ -55,6 +59,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.path_measure_button:
                 goToPage(PathMeasureActivity.class);
+                break;
+            case R.id.svg_button:
+                goToPage(SVGActivity.class);
+                break;
+            case R.id.plus_button:
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    startActivity(new Intent(MainActivity.this, LPlusActivity.class));
+                } else {
+                    Toast.makeText(MainActivity.this, "系统版本不支持L plus", Toast.LENGTH_LONG).show();
+                }
                 break;
         }
     }

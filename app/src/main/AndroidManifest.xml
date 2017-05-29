@@ -25,8 +25,9 @@
         <activity android:name=".SearchViewActivity"/>
         <activity android:name=".PaintActivity"/>
         <activity android:name=".PathActivity"/>
-        <activity android:name=".PathMeasureActivity">
-        </activity>
+        <activity android:name=".PathMeasureActivity"/>
+        <activity android:name=".SVGActivity"/>
+        <activity android:name=".LPlusActivity"/>
     </application>
 
 </manifest>
