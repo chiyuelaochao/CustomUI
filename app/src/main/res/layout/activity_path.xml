@@ -41,6 +41,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="drag_bubble"/>
+
+            <Button
+                android:id="@+id/spider_web_radar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="spider web radar"/>
         </LinearLayout>
     </HorizontalScrollView>
 
@@ -78,6 +84,7 @@
             app:bubble_text="12"
             app:bubble_textColor="#ffffff"
             app:bubble_textSize="12dp"/>
+
         <Button
             android:id="@+id/reset_btn"
             android:layout_width="match_parent"
@@ -87,5 +94,11 @@
             android:text="Reset"
             android:textColor="#666666"/>
     </RelativeLayout>
+
+    <com.caiwei.customui.path.SpiderWebRadarView
+        android:id="@+id/spider_web_radar_view"
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        android:visibility="gone"/>
 </LinearLayout>
 
