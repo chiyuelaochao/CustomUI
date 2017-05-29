@@ -30,7 +30,6 @@ public class DashView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
         drawDashPathEffect(canvas);
     }
 

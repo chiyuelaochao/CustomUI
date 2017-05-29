@@ -19,7 +19,8 @@ public class DashPathView extends View {
         super(context, attrs);
     }
 
-    int dx =0 ;
+    int dx = 0;
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -29,7 +30,7 @@ public class DashPathView extends View {
         invalidate();
     }
 
-    private Paint getPaint(){
+    private Paint getPaint() {
         Paint paint = new Paint();
         paint.setStrokeWidth(4);
         paint.setColor(Color.GREEN);
@@ -38,35 +39,30 @@ public class DashPathView extends View {
         return paint;
     }
 
-    private void drawPathDashPathEffect(Canvas canvas){
+    private void drawPathDashPathEffect(Canvas canvas) {
         Paint paint = getPaint();
 
-        Path path  = new Path();
-        path.moveTo(100,600);
-        path.lineTo(400,150);
-        path.lineTo(700,900);
-        canvas.drawPath(path,paint);
-        canvas.drawPath(path,paint);
+        Path path = new Path();
+        path.moveTo(100, 600);
+        path.lineTo(400, 150);
+        path.lineTo(700, 900);
+//        canvas.drawPath(path, paint);
+        canvas.drawPath(path, paint);
+        canvas.translate(0, 200);
 
-        canvas.translate(0,200);
-
-        /**
-         * 利用以另一个路径为单位,延着路径盖章.相当于PS的印章工具
-         */
-        paint.setPathEffect(new PathDashPathEffect(getStampPath(),35,dx, PathDashPathEffect.Style.MORPH));
-        canvas.drawPath(path,paint);
+        // 利用以另一个路径为单位,延着路径盖章.相当于PS的印章工具
+        paint.setPathEffect(new PathDashPathEffect(getStampPath(), 35, dx, PathDashPathEffect.Style.MORPH));
+        canvas.drawPath(path, paint);
     }
 
 
-    private Path getStampPath(){
-        Path path  = new Path();
-        path.moveTo(0,20);
-        path.lineTo(10,0);
-        path.lineTo(20,20);
+    private Path getStampPath() {
+        Path path = new Path();
+        path.moveTo(0, 20);
+        path.lineTo(10, 0);
+        path.lineTo(20, 20);
         path.close();
-
-        path.addCircle(0,0,3, Path.Direction.CCW);
-
+        path.addCircle(0, 0, 3, Path.Direction.CCW);
         return path;
     }
 }
