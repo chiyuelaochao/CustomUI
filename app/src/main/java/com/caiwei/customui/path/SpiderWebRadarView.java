@@ -46,7 +46,7 @@ public class SpiderWebRadarView extends View {
 
         valuePaint = new Paint();
         valuePaint.setColor(Color.BLUE);
-        valuePaint.setStyle(Paint.Style.FILL_AND_STROKE);
+        valuePaint.setStyle(Paint.Style.FILL);
     }
 
     @Override
@@ -148,10 +148,14 @@ public class SpiderWebRadarView extends View {
             //绘制小圆点
             canvas.drawCircle(x, y, 10, valuePaint);
         }
+
+        //绘制path
+        path.close();
         valuePaint.setStyle(Paint.Style.STROKE);
         canvas.drawPath(path, valuePaint);
-        valuePaint.setAlpha(127);
+
         //绘制填充区域
+        valuePaint.setAlpha(127);
         valuePaint.setStyle(Paint.Style.FILL_AND_STROKE);
         canvas.drawPath(path, valuePaint);
     }
