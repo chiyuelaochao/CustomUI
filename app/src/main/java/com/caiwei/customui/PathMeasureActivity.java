@@ -1,8 +1,7 @@
 package com.caiwei.customui;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
@@ -27,6 +26,8 @@ public class PathMeasureActivity extends AppCompatActivity {
         initViews.initButtonAndLayout(this, R.id.circle_loading, R.id.circle_loading_layout);
         initViews.initButtonAndLayout(this, R.id.trash_can, R.id.trash_can_layout);
         initViews.initButtonAndLayout(this, R.id.wave_rise, R.id.wave_rising_layout);
+        initViews.initButtonAndLayout(this, R.id.circle_search, R.id.circle_search_view);
+        initViews.initButtonAndLayout(this, R.id.circle_airplane, R.id.circle_airplane_view);
 
         initWaveBoatView();
         initCircleLoadingView();
