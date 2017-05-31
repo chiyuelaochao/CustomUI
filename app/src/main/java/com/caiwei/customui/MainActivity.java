@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initButton(R.id.paint_button);
         initButton(R.id.xfer_mode_button);
         initButton(R.id.mask_filter_button);
+        initButton(R.id.new_mask_filter_button);
         initButton(R.id.canvas_button);
         initButton(R.id.reveal_button);
         initButton(R.id.search_button);
@@ -44,6 +45,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.mask_filter_button:
                 goToPage(MaskFilterActivity.class);
+                break;
+            case R.id.new_mask_filter_button:
+                goToPage(NewMaskFilterActivity.class);
                 break;
             case R.id.canvas_button:
                 goToPage(CanvasActivity.class);

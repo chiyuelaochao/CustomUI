@@ -90,7 +90,7 @@ public class ArrowCircleView extends View {
         }
 
         // 方案一, 获取当前位置的坐标以及趋势
-        /*measure.getPosTan(measure.getLength() * currentValue, pos, tan);
+     /*   measure.getPosTan(measure.getLength() * currentValue, pos, tan);
         // 重置Matrix
         mMatrix.reset();
         // 计算图片旋转角度
@@ -103,13 +103,11 @@ public class ArrowCircleView extends View {
         // 方案二, 获取当前位置的坐标以及趋势的矩阵
         measure.getMatrix(measure.getLength() * currentValue, mMatrix,
                 PathMeasure.TANGENT_MATRIX_FLAG | PathMeasure.POSITION_MATRIX_FLAG);
-
         // 将图片绘制中心调整到与当前点重合(注意:此处是前乘pre)
         mMatrix.preTranslate(-mBitmap.getWidth() / 2, -mBitmap.getHeight() / 2);
-
         canvas.drawPath(path, mDefaultPaint);
-        canvas.drawBitmap(mBitmap, mMatrix, mDefaultPaint);
 
+        canvas.drawBitmap(mBitmap, mMatrix, mDefaultPaint);
         invalidate();
     }
 }

@@ -1,0 +1,245 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <com.caiwei.customui.maskFilter.MaskFilterView
+        android:id="@+id/mask_filter_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:orientation="vertical"
+        android:paddingTop="10dp">
+
+        <!-- 设置MaskFilter的类型 -->
+        <RadioGroup
+            android:id="@+id/rgMaskFilter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbNone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="无MaskFilter"/>
+
+            <RadioButton
+                android:id="@+id/rbBlur"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="BlurMaskFilter"/>
+
+            <RadioButton
+                android:id="@+id/rbEmboss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="EmbossMaskFilter"/>
+        </RadioGroup>
+
+        <!-- 设置BlurMaskFilter的style -->
+        <RadioGroup
+            android:id="@+id/rgBlurStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbNormal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="NORMAL"/>
+
+            <RadioButton
+                android:id="@+id/rbInner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:text="INNER"/>
+
+            <RadioButton
+                android:id="@+id/rbOuter"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:text="OUTER"/>
+
+            <RadioButton
+                android:id="@+id/rbSolid"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:text="SOLID"/>
+        </RadioGroup>
+
+        <!-- 设置Direction中的x -->
+        <RelativeLayout
+            android:id="@+id/layoutDirectionX"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvDirectionXTip"
+                android:layout_width="85dp"
+                android:layout_height="30dp"
+                android:text="Direction X:"/>
+
+            <SeekBar
+                android:id="@+id/seekBarX"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_toLeftOf="@+id/tvDirectionXNumber"
+                android:layout_toRightOf="@id/tvDirectionXTip"/>
+
+            <TextView
+                android:id="@+id/tvDirectionXNumber"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+
+        <!-- 设置Direction中的y -->
+        <RelativeLayout
+            android:id="@+id/layoutDirectionY"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvDirectionYTip"
+                android:layout_width="85dp"
+                android:layout_height="30dp"
+                android:text="Direction Y:"/>
+
+            <SeekBar
+                android:id="@+id/seekBarY"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_toLeftOf="@+id/tvDirectionYNumber"
+                android:layout_toRightOf="@id/tvDirectionYTip"/>
+
+            <TextView
+                android:id="@+id/tvDirectionYNumber"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+
+        <!-- 设置Direction中的z -->
+        <RelativeLayout
+            android:id="@+id/layoutDirectionZ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvDirectionZTip"
+                android:layout_width="85dp"
+                android:layout_height="30dp"
+                android:text="Direction Z:"/>
+
+            <SeekBar
+                android:id="@+id/seekBarZ"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_toLeftOf="@+id/tvDirectionZNumber"
+                android:layout_toRightOf="@id/tvDirectionZTip"/>
+
+            <TextView
+                android:id="@+id/tvDirectionZNumber"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+
+        <!-- 设置Ambient -->
+        <RelativeLayout
+            android:id="@+id/layoutAmbient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvAmbientTip"
+                android:layout_width="85dp"
+                android:layout_height="30dp"
+                android:text="Ambient:"/>
+
+            <SeekBar
+                android:id="@+id/seekBarAmbient"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_toLeftOf="@+id/tvAmbientNumber"
+                android:layout_toRightOf="@id/tvAmbientTip"/>
+
+            <TextView
+                android:id="@+id/tvAmbientNumber"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+
+        <!-- 设置Specular -->
+        <RelativeLayout
+            android:id="@+id/layoutSpecular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvSpecularTip"
+                android:layout_width="85dp"
+                android:layout_height="30dp"
+                android:text="Specular:"/>
+
+            <SeekBar
+                android:id="@+id/seekBarSpecular"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_toLeftOf="@+id/tvSpecularNumber"
+                android:layout_toRightOf="@id/tvSpecularTip"/>
+
+            <TextView
+                android:id="@+id/tvSpecularNumber"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+
+        <!-- 设置模糊半径 -->
+        <RelativeLayout
+            android:id="@+id/layoutBlurRadius"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvBlurTip"
+                android:layout_width="85dp"
+                android:layout_height="30dp"
+                android:text="Blur Radius:"/>
+
+            <SeekBar
+                android:id="@+id/seekBarBlurRadius"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_toLeftOf="@+id/tvBlurNumber"
+                android:layout_toRightOf="@id/tvBlurTip"/>
+
+            <TextView
+                android:id="@+id/tvBlurNumber"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

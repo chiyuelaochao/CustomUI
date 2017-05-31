@@ -17,6 +17,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
         <activity android:name=".LayoutActivity"/>
         <activity android:name=".XferModeActivity"/>
         <activity android:name=".MaskFilterActivity"/>
@@ -28,6 +29,7 @@
         <activity android:name=".PathMeasureActivity"/>
         <activity android:name=".SVGActivity"/>
         <activity android:name=".LPlusActivity"/>
+        <activity android:name=".NewMaskFilterActivity"/>
     </application>
 
 </manifest>

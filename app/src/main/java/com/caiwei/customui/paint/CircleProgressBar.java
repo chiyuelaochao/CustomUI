@@ -33,7 +33,6 @@ public class CircleProgressBar extends View {
     public CircleProgressBar(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         paint = new Paint();
-
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.CustomProgressBar);
         max = typedArray.getInteger(R.styleable.CustomProgressBar_max, 100);
         roundColor = typedArray.getColor(R.styleable.CustomProgressBar_roundColor, Color.RED);
@@ -42,10 +41,7 @@ public class CircleProgressBar extends View {
         textSize = typedArray.getDimension(R.styleable.CustomProgressBar_textSize, 55);
         roundWidth = typedArray.getDimension(R.styleable.CustomProgressBar_roundWidth, 10);
         textShow = typedArray.getBoolean(R.styleable.CustomProgressBar_textShow, true);
-
-
         typedArray.recycle();
-
     }
 
     @Override
@@ -72,14 +68,17 @@ public class CircleProgressBar extends View {
         String strPercent = percent + "%";
         Paint.FontMetricsInt fm = paint.getFontMetricsInt();
         if (percent != 0) {
-            canvas.drawText(strPercent, getWidth() / 2 - paint.measureText(strPercent) / 2,
-                    getWidth() / 2 + (fm.bottom - fm.top) / 2 - fm.bottom, paint);
+            canvas.drawText(
+                    strPercent,
+                    getWidth() / 2 - paint.measureText(strPercent) / 2,
+                    getWidth() / 2 + (fm.bottom - fm.top) / 2 - fm.bottom,
+                    paint
+            );
         }
 
 
         // 画圆弧
-        RectF oval = new RectF(center - radius, center - radius,
-                center + radius, center + radius);
+        RectF oval = new RectF(center - radius, center - radius, center + radius, center + radius);
         paint.setColor(roundProgressColor);
         paint.setStrokeWidth(roundWidth);
         paint.setStyle(Paint.Style.STROKE);

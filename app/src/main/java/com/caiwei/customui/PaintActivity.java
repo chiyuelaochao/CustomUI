@@ -24,6 +24,7 @@ public class PaintActivity extends AppCompatActivity {
         initViews.initButtonAndLayout(this, R.id.linear_gradient, R.id.linear_gradient_text_view);
         initViews.initButtonAndLayout(this, R.id.gradient, R.id.gradient_view);
         initViews.initButtonAndLayout(this, R.id.zoom, R.id.zoom_image_view);
+        initViews.initButtonAndLayout(this, R.id.video_progress, R.id.video_progress_bar);
 
         initCircleProgressBarView();
         initDashView();
