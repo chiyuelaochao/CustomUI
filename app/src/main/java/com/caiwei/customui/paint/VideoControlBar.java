@@ -23,6 +23,9 @@ public class VideoControlBar extends View {
     private Paint paintBack, circlePaint, controlPaint;
     private int start, end;
     private Path pathBack, pathControl;
+    private final static int OFFSET_X = 200;
+    private final static int OFFSET_Y = 200;
+    private final static int BUTTON_RADIUS = 30;
 
     public VideoControlBar(Context context) {
         this(context, null);
@@ -50,10 +53,10 @@ public class VideoControlBar extends View {
         circlePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         circlePaint.setStyle(Paint.Style.FILL_AND_STROKE);
         circlePaint.setColor(Color.WHITE);
-        float[] direction = new float[]{0, 6, 6};// 设置x、y、z三个方向效果
-        float light = 0.9f;// 设置环境光亮度
-        float specular = 0.5f;// 选择要应用的反射等级
-        float blur = 8;// 向mask应用一定级别的模糊
+        float[] direction = new float[]{0, 4, 4};// 设置x、y、z三个方向效果
+        float light = 0.6f;// 设置环境光亮度
+        float specular = 0.3f;// 选择要应用的反射等级
+        float blur = 4;// 向mask应用一定级别的模糊
         EmbossMaskFilter emboss = new EmbossMaskFilter(direction, light, specular, blur);
         circlePaint.setMaskFilter(emboss);
 //        circlePaint.setMaskFilter(new BlurMaskFilter(5, BlurMaskFilter.Blur.INNER));
@@ -63,31 +66,30 @@ public class VideoControlBar extends View {
         pathControl = new Path();
         pathStartButton = new Path();
         pathEndButton = new Path();
-        startRegion = new Region();
-        endRegion = new Region();
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.drawColor(Color.BLACK);
-        canvas.translate(60, 200);
-        start = 0;
+        canvas.translate(OFFSET_X, OFFSET_Y);
+        start = OFFSET_X;
         end = canvas.getWidth() - 200;
+        if (endPosition == 0) {
+            endPosition = end;
+        }
         pathBack.lineTo(end, 0);
 
         canvas.drawPath(pathBack, paintBack);
         pathControl.reset();
         pathControl.moveTo(startPosition, 0);
-        pathControl.lineTo(endPosition == 0 ? end : endPosition, 0);
+        pathControl.lineTo(endPosition, 0);
         canvas.drawPath(pathControl, controlPaint);
 
         pathStartButton.reset();
-        pathStartButton.addCircle(startPosition, 0, 40, Path.Direction.CW);
-        pathStartButton.close();
+        pathStartButton.addCircle(startPosition, 0, BUTTON_RADIUS, Path.Direction.CW);
         pathEndButton.reset();
-        pathEndButton.addCircle(endPosition == 0 ? end : endPosition, 0, 40, Path.Direction.CW);
-        pathEndButton.close();
+        pathEndButton.addCircle(endPosition, 0, BUTTON_RADIUS, Path.Direction.CW);
 
         // draw progress control button
         canvas.drawPath(pathStartButton, circlePaint);
@@ -97,51 +99,71 @@ public class VideoControlBar extends View {
     private float startPosition = 0;
     private float endPosition = 0;
     private Path pathStartButton, pathEndButton;
-    private Region startRegion, endRegion;
+    private int buttonFlag;
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                Log.e(TAG, "ACTION_DOWN:" + event.getX() + "," + event.getY());
-                if (isInStartRegion(event.getX(), event.getY())) {
+                distance = 0;
+                if (isInStartRegion(event.getX() - OFFSET_X, event.getY() - OFFSET_Y)) {
                     Log.e(TAG, "isInStartRegion");
-                } else if (isInEndRegion(event.getX(), event.getY())) {
+                    buttonFlag = 1;
+                    distance = event.getX() - this.startPosition;
+                } else if (isInEndRegion(event.getX() - OFFSET_X, event.getY() - OFFSET_Y)) {
                     Log.e(TAG, "isInEndRegion");
+                    buttonFlag = 2;
+                    distance = event.getX() - this.endPosition;
                 } else {
+                    buttonFlag = 0;
                     Log.e(TAG, "nothing");
                 }
                 break;
             case MotionEvent.ACTION_MOVE:
-//                Log.e(TAG, "ACTION_MOVE:" + event.getX() + "," + event.getY());
                 if (event.getX() < end) {
-                    setStartPosition(event.getX());
-//                    setEndPosition(event.getX() + 300);
-                    invalidate();
-                    if (listener != null) {
-                        listener.onProgressChange(this.startPosition, this.getEndPosition());
+                    switch (buttonFlag) {
+                        case 1:
+                            Log.e("123", "event.getX() = " + event.getX());
+                            Log.e("123", "distance = " + distance);
+                            Log.e("123", "start = " + start);
+                            if (event.getX() + distance >= start && event.getX() < endPosition) {
+                                setStartPosition(event.getX());
+                                if (listener != null) {
+                                    listener.onProgressChange(this.startPosition, this.endPosition);
+                                }
+                                Log.e("123", "startPosition = " + event.getX());
+                                Log.e("123", "endPosition = " + endPosition);
+                            } else {
+                                Log.e("123", "setStartPosition cant ");
+                            }
+                            break;
+                        case 2:
+                            if (event.getX()- distance <= end && event.getX()  > startPosition) {
+                                setEndPosition(event.getX());
+                                if (listener != null) {
+                                    listener.onProgressChange(this.startPosition, this.endPosition);
+                                }
+                            } else {
+                                Log.e("123", "setEndPosition cant ");
+                            }
+                            break;
+                        default:
+                            break;
                     }
-                } /*else {
+                    invalidate();
+                } else {
                     Log.e(TAG, "Position numbers are out of limits!");
-                }*/
+                }
                 break;
             case MotionEvent.ACTION_UP:
-//                Log.e(TAG, "ACTION_UP:" + event.getX() + "," + event.getY());
+                buttonFlag = 0;
+                distance = 0;
                 break;
         }
         return true;
     }
 
-//    @Override
-//    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-//        super.onSizeChanged(w, h, oldw, oldh);
-//        Region globalRegion = new Region(-w, -h, w, h); // 将剪裁边界设置为视图大小
-//        startRegion.setPath(pathStartButton, globalRegion); // 将 Path 添加到 Region 中
-//        endRegion.setPath(pathEndButton, globalRegion);
-//    }
-
     private boolean isInStartRegion(float x, float y) {
-//        return startRegion.contains((int) x, (int) y);
         RectF bounds = new RectF();
         pathStartButton.computeBounds(bounds, true);
         Region region = new Region();
@@ -150,11 +172,11 @@ public class VideoControlBar extends View {
     }
 
     private boolean isInEndRegion(float x, float y) {
-//        return endRegion.contains((int) x, (int) y);
         RectF bounds = new RectF();
         pathEndButton.computeBounds(bounds, true);
         Region region = new Region();
-        region.setPath(pathEndButton, new Region((int) bounds.left, (int) bounds.top, (int) bounds.right, (int) bounds.bottom));
+        region.setPath(pathEndButton, new Region((int) bounds.left, (int) bounds.top, (int) bounds.right, (int)
+                bounds.bottom));
         return region.contains((int) x, (int) y);
     }
 
@@ -162,8 +184,10 @@ public class VideoControlBar extends View {
         return startPosition;
     }
 
+    private float distance;
+
     public void setStartPosition(float startPosition) {
-        this.startPosition = startPosition;
+        this.startPosition = startPosition - distance;
     }
 
     public float getEndPosition() {
@@ -171,7 +195,7 @@ public class VideoControlBar extends View {
     }
 
     public void setEndPosition(float endPosition) {
-        this.endPosition = endPosition;
+        this.endPosition = endPosition - distance;
     }
 
     public interface ProgressChangeListener {

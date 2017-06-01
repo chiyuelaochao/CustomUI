@@ -7,8 +7,10 @@ import android.widget.Button;
 
 import com.caiwei.customui.paint.CircleProgressBar;
 import com.caiwei.customui.paint.DashView;
+import com.caiwei.customui.paint.VideoControlBar;
 
 public class PaintActivity extends AppCompatActivity {
+    private final String TAG = getClass().getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,19 @@ public class PaintActivity extends AppCompatActivity {
 
         initCircleProgressBarView();
         initDashView();
+        initVideoControlBarView();
+    }
+
+    private void initVideoControlBarView() {
+        VideoControlBar videoControlBar = (VideoControlBar) findViewById(R.id.video_control_bar);
+        if (videoControlBar != null) {
+            videoControlBar.setOnProgressChangeListener(new VideoControlBar.ProgressChangeListener() {
+                @Override
+                public void onProgressChange(float startPosition, float endPosition) {
+//                    Log.e(TAG, "startPosition = " + startPosition + ", endPosition = " + endPosition);
+                }
+            });
+        }
     }
 
     private int progress = 0;
