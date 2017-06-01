@@ -47,6 +47,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="spider web radar"/>
+
+            <Button
+                android:id="@+id/remote_control"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="remote control"/>
+
+            <Button
+                android:id="@+id/region_contain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="region contain"/>
         </LinearLayout>
     </HorizontalScrollView>
 
@@ -99,6 +111,18 @@
         android:id="@+id/spider_web_radar_view"
         android:layout_width="500dp"
         android:layout_height="500dp"
+        android:visibility="gone"/>
+
+    <com.caiwei.customui.path.RemoteControlMenu
+        android:id="@+id/remote_control_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <com.caiwei.customui.path.RegionContainView
+        android:id="@+id/region_contain_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:visibility="gone"/>
 </LinearLayout>
 

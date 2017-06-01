@@ -68,7 +68,7 @@
                 android:id="@+id/video_progress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="video progress"/>
+                android:text="video control"/>
         </LinearLayout>
     </HorizontalScrollView>
 
@@ -136,8 +136,8 @@
         android:layout_height="match_parent"
         android:visibility="gone"/>
 
-    <com.caiwei.customui.paint.VideoProgressBar
-        android:id="@+id/video_progress_bar"
+    <com.caiwei.customui.paint.VideoControlBar
+        android:id="@+id/video_control_bar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"/>
