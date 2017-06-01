@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initButton(R.id.path_measure_button);
         initButton(R.id.svg_button);
         initButton(R.id.plus_button);
+        initButton(R.id.map_button);
     }
 
     @Override
@@ -73,6 +74,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 } else {
                     Toast.makeText(MainActivity.this, "系统版本不支持L plus", Toast.LENGTH_LONG).show();
                 }
+                break;
+            case R.id.map_button:
+                goToPage(SvgMapActivity.class);
                 break;
         }
     }
