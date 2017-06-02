@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".LayoutActivity"/>
-        <activity android:name=".XferModeActivity"/>
+        <activity android:name=".XFerModeActivity"/>
         <activity android:name=".MaskFilterActivity"/>
         <activity android:name=".CanvasActivity"/>
         <activity android:name=".RevealActivity"/>

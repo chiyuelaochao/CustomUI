@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 goToPage(PaintActivity.class);
                 break;
             case R.id.xfer_mode_button:
-                goToPage(XferModeActivity.class);
+                goToPage(XFerModeActivity.class);
                 break;
             case R.id.mask_filter_button:
                 goToPage(MaskFilterActivity.class);

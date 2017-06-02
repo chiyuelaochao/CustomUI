@@ -6,7 +6,7 @@ import android.view.View;
 
 import com.caiwei.customui.xfermode.RadarView;
 
-public class XferModeActivity extends AppCompatActivity {
+public class XFerModeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

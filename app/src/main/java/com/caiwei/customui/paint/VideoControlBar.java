@@ -1,6 +1,8 @@
 package com.caiwei.customui.paint;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.EmbossMaskFilter;
@@ -13,6 +15,8 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.caiwei.customui.R;
+
 /**
  * Created by wei.cai on 2017/5/31.
  * https://www.diycode.cc/topics/429
@@ -21,11 +25,11 @@ import android.view.View;
 public class VideoControlBar extends View {
     private final String TAG = getClass().getSimpleName();
     private Paint paintBack, circlePaint, controlPaint;
-    private int start, end;
+    private int minValue, maxValue;
     private Path pathBack, pathControl;
-    private final static int OFFSET_X = 200;
-    private final static int OFFSET_Y = 200;
     private final static int BUTTON_RADIUS = 30;
+    private final static int OFFSET_X = BUTTON_RADIUS;
+    private final static int OFFSET_Y = BUTTON_RADIUS;
 
     public VideoControlBar(Context context) {
         this(context, null);
@@ -37,6 +41,8 @@ public class VideoControlBar extends View {
     }
 
     private void init() {
+        Bitmap barSkin = BitmapFactory.decodeResource(getResources(), R.drawable.ic_bar_skin, null);
+
         paintBack = new Paint(Paint.ANTI_ALIAS_FLAG);
         paintBack.setStyle(Paint.Style.STROKE);
         paintBack.setColor(Color.GRAY);
@@ -69,29 +75,59 @@ public class VideoControlBar extends View {
     }
 
     @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        int measureWidth = 0;
+        int measureHeight = 0;
+
+        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
+
+        int heightMode = MeasureSpec.getMode(heightMeasureSpec);
+        int heightSize = MeasureSpec.getSize(heightMeasureSpec);
+
+        if (widthMode == MeasureSpec.EXACTLY && heightMode == MeasureSpec.EXACTLY) {
+            measureWidth = widthSize;
+            measureHeight = heightSize;
+        } else {
+            measureWidth = getMeasuredWidth();
+            measureHeight = BUTTON_RADIUS * 2;
+        }
+
+        setMeasuredDimension(measureWidth, measureHeight);
+    }
+
+    @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawColor(Color.BLACK);
         canvas.translate(OFFSET_X, OFFSET_Y);
-        start = OFFSET_X;
-        end = canvas.getWidth() - 200;
+        minValue = OFFSET_X;
+        maxValue = canvas.getWidth() - BUTTON_RADIUS * 2;
+//        if (startPosition == 0) {
+//            startPosition = minValue;
+//        }
+//        if (endPosition == 0) {
+//            endPosition = maxValue;
+//        }
         if (endPosition == 0) {
-            endPosition = end;
+            endPosition = maxValue;
         }
-        pathBack.lineTo(end, 0);
 
+        // draw progress control bar back
+        pathBack.lineTo(maxValue, 0);
         canvas.drawPath(pathBack, paintBack);
+
+        // draw progress control bar
         pathControl.reset();
         pathControl.moveTo(startPosition, 0);
         pathControl.lineTo(endPosition, 0);
         canvas.drawPath(pathControl, controlPaint);
 
+        // draw progress control bar button
         pathStartButton.reset();
         pathStartButton.addCircle(startPosition, 0, BUTTON_RADIUS, Path.Direction.CW);
         pathEndButton.reset();
         pathEndButton.addCircle(endPosition, 0, BUTTON_RADIUS, Path.Direction.CW);
-
-        // draw progress control button
         canvas.drawPath(pathStartButton, circlePaint);
         canvas.drawPath(pathEndButton, circlePaint);
     }
@@ -107,52 +143,62 @@ public class VideoControlBar extends View {
             case MotionEvent.ACTION_DOWN:
                 distance = 0;
                 if (isInStartRegion(event.getX() - OFFSET_X, event.getY() - OFFSET_Y)) {
-                    Log.e(TAG, "isInStartRegion");
                     buttonFlag = 1;
                     distance = event.getX() - this.startPosition;
+                    Log.d(TAG, "isInStartRegion, distance = " + distance
+                            + ", event.getX() = " + event.getX()
+                            + ", startPosition = " + startPosition
+                    );
                 } else if (isInEndRegion(event.getX() - OFFSET_X, event.getY() - OFFSET_Y)) {
-                    Log.e(TAG, "isInEndRegion");
                     buttonFlag = 2;
                     distance = event.getX() - this.endPosition;
+                    Log.d(TAG, "isInEndRegion, distance = " + distance
+                            + ", event.getX() = " + event.getX()
+                            + ", endPosition = " + endPosition
+                    );
                 } else {
                     buttonFlag = 0;
-                    Log.e(TAG, "nothing");
+                    Log.d(TAG, "nothing");
                 }
                 break;
             case MotionEvent.ACTION_MOVE:
-                if (event.getX() < end) {
+                if (event.getX() < maxValue) {
                     switch (buttonFlag) {
                         case 1:
-                            Log.e("123", "event.getX() = " + event.getX());
-                            Log.e("123", "distance = " + distance);
-                            Log.e("123", "start = " + start);
-                            if (event.getX() + distance >= start && event.getX() < endPosition) {
+                            if (event.getX() >= minValue && event.getX() < endPosition) {
+                                Log.e(TAG, "Start: minValue = " + minValue
+                                        + " <= event.getX() = " + event.getX()
+                                        + " < endPosition = " + endPosition
+                                );
                                 setStartPosition(event.getX());
                                 if (listener != null) {
                                     listener.onProgressChange(this.startPosition, this.endPosition);
                                 }
-                                Log.e("123", "startPosition = " + event.getX());
-                                Log.e("123", "endPosition = " + endPosition);
                             } else {
-                                Log.e("123", "setStartPosition cant ");
+                                Log.e(TAG, "cant setStartPosition");
                             }
                             break;
                         case 2:
-                            if (event.getX()- distance <= end && event.getX()  > startPosition) {
+                            if (event.getX() <= maxValue && event.getX() > startPosition) {
+                                Log.e(TAG, "End: startPosition = " + startPosition
+                                        + "< event.getX() = " + event.getX()
+                                        + " <= maxValue = " + maxValue
+                                );
                                 setEndPosition(event.getX());
                                 if (listener != null) {
                                     listener.onProgressChange(this.startPosition, this.endPosition);
                                 }
                             } else {
-                                Log.e("123", "setEndPosition cant ");
+                                Log.e(TAG, "cant setEndPosition");
                             }
                             break;
                         default:
+                            Log.d(TAG, "not in any region, event.getX() = " + event.getX());
                             break;
                     }
                     invalidate();
                 } else {
-                    Log.e(TAG, "Position numbers are out of limits!");
+                    Log.d(TAG, "Position numbers are out of limits!");
                 }
                 break;
             case MotionEvent.ACTION_UP:
@@ -167,7 +213,8 @@ public class VideoControlBar extends View {
         RectF bounds = new RectF();
         pathStartButton.computeBounds(bounds, true);
         Region region = new Region();
-        region.setPath(pathStartButton, new Region((int) bounds.left, (int) bounds.top, (int) bounds.right, (int) bounds.bottom));
+        region.setPath(pathStartButton,
+                new Region((int) bounds.left, (int) bounds.top, (int) bounds.right, (int) bounds.bottom));
         return region.contains((int) x, (int) y);
     }
 
@@ -175,8 +222,8 @@ public class VideoControlBar extends View {
         RectF bounds = new RectF();
         pathEndButton.computeBounds(bounds, true);
         Region region = new Region();
-        region.setPath(pathEndButton, new Region((int) bounds.left, (int) bounds.top, (int) bounds.right, (int)
-                bounds.bottom));
+        region.setPath(pathEndButton,
+                new Region((int) bounds.left, (int) bounds.top, (int) bounds.right, (int) bounds.bottom));
         return region.contains((int) x, (int) y);
     }
 
@@ -188,6 +235,7 @@ public class VideoControlBar extends View {
 
     public void setStartPosition(float startPosition) {
         this.startPosition = startPosition - distance;
+        Log.d(TAG, "setStartPosition, startPosition= " + startPosition + " - distance = " + distance + " = " + this.startPosition);
     }
 
     public float getEndPosition() {
@@ -196,6 +244,7 @@ public class VideoControlBar extends View {
 
     public void setEndPosition(float endPosition) {
         this.endPosition = endPosition - distance;
+        Log.d(TAG, "setEndPosition, endPosition = " + endPosition + " - distance = " + distance + " = " + this.endPosition);
     }
 
     public interface ProgressChangeListener {
