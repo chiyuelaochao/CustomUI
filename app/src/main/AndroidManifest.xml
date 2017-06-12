@@ -29,8 +29,8 @@
         <activity android:name=".SVGActivity"/>
         <activity android:name=".LPlusActivity"/>
         <activity android:name=".NewMaskFilterActivity"/>
-        <activity android:name=".SvgMapActivity">
-        </activity>
+        <activity android:name=".SvgMapActivity"/>
+        <activity android:name=".AnimatorActivity"/>
     </application>
 
 </manifest>

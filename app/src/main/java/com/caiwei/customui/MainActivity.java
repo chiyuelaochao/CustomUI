@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initButton(R.id.svg_button);
         initButton(R.id.plus_button);
         initButton(R.id.map_button);
+        initButton(R.id.animator_value);
     }
 
     @Override
@@ -77,6 +78,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.map_button:
                 goToPage(SvgMapActivity.class);
+                break;
+            case R.id.animator_value:
+                goToPage(AnimatorActivity.class);
                 break;
         }
     }
