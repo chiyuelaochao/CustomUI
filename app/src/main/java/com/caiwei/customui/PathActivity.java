@@ -21,6 +21,7 @@ public class PathActivity extends AppCompatActivity {
         initViews.initButtonAndLayout(this, R.id.spider_web_radar, R.id.spider_web_radar_view);
         initViews.initButtonAndLayout(this, R.id.remote_control, R.id.remote_control_menu);
         initViews.initButtonAndLayout(this, R.id.region_contain, R.id.region_contain_view);
+        initViews.initButtonAndLayout(this, R.id.circle_panel, R.id.circle_panel_view);
 
         initDragBubbleView();
     }
